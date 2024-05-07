@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(20, 20, 20);
+
+        }
+
+        .container {
+            background-color: gray;
+            width: 60%;
+            height: 105vh;
+            margin: auto;
+            background-image: url('./images/01.png');
+            background-repeat: no-repeat;
+            background-position: right top;
+            position: relative;
+        }
+
+        .div1 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            /* linear-gradient 線性漸層  預設上到下*/
+            /* linear-gradient(顏色1, 顏色2) */
+            background-image: linear-gradient(lightblue, rgb(1, 85, 1), lightyellow);
+        }
+
+        .div2 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 37%;
+            /* 
+            to top = 0deg / 360deg 
+            to right = 90deg
+            to bottom = 180deg
+            to left = 270deg
+            */
+            background-image: linear-gradient(to bottom right, lightblue, rgb(2, 83, 2), lightyellow);
+        }
+
+        .div3 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            right: 0;
+            background-image: linear-gradient(270deg, lightblue, rgb(2, 83, 2), lightyellow);
+        }
+
+        .div4 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 350px;
+            /* 
+            linear-gradient(顏色1 漸變位置, 顏色2 漸變位置)
+            漸變位置 => 可以 % 或 px
+            linear-gradient(lightblue 100px, lightgreen)
+            */
+            background-image: linear-gradient(lightblue 50%, rgb(2, 83, 2), lightyellow);
+        }
+
+        .div5 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 350px;
+            left: 37%;
+            background-image: linear-gradient(lightblue 30%, rgb(2, 83, 2) 30%, rgb(228, 136, 17) 60%, lightyellow);
+        }
+
+        .div6 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 350px;
+            right: 0;
+            /* 如果漸變位置相同，會有明顯的分隔線 起10%訖10%-20%，非加總100% */
+            background-image: linear-gradient(lightblue 30%, rgb(2, 83, 2) 30%, rgb(228, 136, 17) 60%, lightyellow 70%);
+        }
+
+        .div7 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 700px;
+            left: 0;
+            /* repeating 重複 */
+            /* 如果漸層不夠大，會重複填滿區域 */
+            background-image: repeating-linear-gradient(lightblue, lightyellow 10%);
+        }
+
+        .div8 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 700px;
+            left: 37%;
+            background-image: repeating-linear-gradient(45deg, lightblue 0px, lightblue 20px, black 20px, black 40px);
+        }
+
+        .div9 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 700px;
+            right: 0;
+            background-image: linear-gradient(45deg, lightblue 30%, rgb(1, 105, 139));
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+        <div class="div6"></div>
+        <div class="div7"></div>
+        <div class="div8"></div>
+        <div class="div9"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- margin auto 表格置中 -->
+    <!-- text-align : center; 表格內文字置中 -->
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: center;
+            /* padding: 8px; */
+            height: 100px;
+        }
+
+        /* tr:nth-child(even) {
+            background-color: #dddddd;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <h2>HTML Table</h2>
+
+    <table>
+        <tr>
+            <th colspan="2">1</th>
+            <!-- <th>2</th> -->
+            <th rowspan="2">3</th>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <!-- <td>6</td> -->
+        </tr>
+        <tr>
+            <td colspan="3">7</td>
+            <!-- <td>8</td>
+            <td>9</td> -->
+        </tr>
+    </table>
+
+    <hr>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td colspan="5">13</td>
+            <!-- <td>14</td>
+            <td>15</td>
+            <td>11</td>
+            <td>16</td> -->
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+            <td>35</td>
+            <td>36</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>42</td>
+            <td>43</td>
+            <td>44</td>
+            <td>45</td>
+            <td>46</td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+            <td>55</td>
+            <td>56</td>
+        </tr>
+        <tr>
+            <td>61</td>
+            <td colspan="6">62</td>
+            <!-- <td>63</td>
+            <td>64</td>
+            <td>65</td>
+            <td>66</td> -->
+        </tr>
+        <tr>
+            <td>71</td>
+            <td>72</td>
+            <td rowspan="2">73</td>
+            <td rowspan="3">74</td>
+            <td rowspan="3">75</td>
+            <td>76</td>
+        </tr>
+        <tr>
+            <td>81</td>
+            <td>82</td>
+            <!-- <td>83</td> -->
+            <!-- <td>84</td> -->
+            <!-- <td>85</td> -->
+            <td>86</td>
+        </tr>
+        <tr>
+            <td>91</td>
+            <td colspan="2">92</td>
+            <!-- <td>93</td> -->
+            <!-- <td>94</td> -->
+            <!-- <td>95</td> -->
+            <td>96</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

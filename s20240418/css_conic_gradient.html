@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(20, 20, 20);
+
+        }
+
+        .container {
+            background-color: gray;
+            width: 60%;
+            height: 70vh;
+            margin: auto;
+            background-image: url('./images/01.png');
+            background-repeat: no-repeat;
+            background-position: right top;
+            position: relative;
+        }
+
+        .div1 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            background-image: conic-gradient(blue, rgb(1, 85, 1), lightyellow);
+        }
+
+        .div2 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 37%;
+            background-image: conic-gradient(blue, green);
+        }
+
+        .div3 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            right: 0;
+            background-image: conic-gradient(blue 50%, green 50%);
+        }
+
+        .div4 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 350px;
+            /* at 設定圓心位置 */
+            background-image: conic-gradient(at right top, blue, green);
+        }
+
+        .div5 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 350px;
+            left: 37%;
+            /*  from 設定第一個顏色的開始角度 */
+            background-image: conic-gradient(from 90deg at right top, blue, green);
+        }
+
+        .div6 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 350px;
+            right: 0;
+            /* 替換老師的 */
+            background-image: repeating-conic-gradient(black 0deg, blue 22.5deg, blue 22.5deg, black 45deg);
+            /* background-image: repeating-conic-gradient(black 0deg, black 22.5deg, red 22.5deg, red 45deg); */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+        <div class="div6"></div>
+        <div class="div7"></div>
+        <div class="div8"></div>
+        <div class="div9"></div>
+        <div class="div10"></div>
+        <div class="div11"></div>
+        <div class="div12"></div>
+    </div>
+
+</body>
+
+</html>

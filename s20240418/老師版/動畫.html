@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      background: gray;
+      /* 
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+        name: 動畫名稱
+        duration: 動畫長度
+        timing-function:
+          linear ease...,
+          step-start(一格一格播放，跳過第一格), step-end(一格一格播放，跳過最後一格)
+          steps(關鍵影格切幾份, start/end)
+        delay: 延遲
+        iteration-count: 播放次數，數字或 infinite
+        direction: 方向，normal、reverse(倒帶)、alternate(播過去播回來)、alternate-reverse(播回來播過去)
+        fill-mode: 動畫結束後停在哪裡，none(回到原始狀態)、forwards(停在最後)
+      */
+      /* animation: move 2s linear 0s 2 alternate-reverse both; */
+      animation: move 5s step-end;
+    }
+    #div1:hover {
+      /* 動畫播放狀態 */
+      animation-play-state: paused;
+    }
+    @keyframes move {
+      /* 0% 也可以寫 from */
+      0% {
+        left: 0px;
+      }
+      25% {
+        left: 125px;
+      }
+      50% {
+        left: 250px
+      }
+      75% {
+        left: 375px
+      }
+      /* 100% 也可以寫 to */
+      100% {
+        left: 500px
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="div1"></div>
+</body>
+</html>

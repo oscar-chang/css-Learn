@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+        }
+
+        a {
+            display: inline-block;
+            /* display: block; */
+        }
+
+        a>img:hover {
+            width: 105%;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-image: url('https://picsum.photos/300/300?random=3');
+            background-size: cover;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-image: url(https://picsum.photos/300/300?random=2);
+            /* background-size: cover; */
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.w3schools.com/">Go w3schools</a>
+
+    <br>
+
+    <a href="https://www.w3schools.com/">
+        <img src="https://picsum.photos/id/20/200/300" alt="">
+    </a>
+
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

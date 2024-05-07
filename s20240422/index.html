@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple practice</title>
+    <style>
+        body {
+            margin: 0 auto;
+            background-color: #e8e8ed;
+            /* left: 0;
+            right: 0; */
+            /* text-align: center; */
+        }
+
+        #header {
+            text-align: center;
+            position: relative;
+            display: block;
+            height: 75px;
+            line-height: 75px;
+        }
+
+        .menu {
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 1.4em;
+        }
+
+        #footer {
+            text-align: center;
+            position: relative;
+            display: block;
+            height: 75px;
+            line-height: 75px;
+        }
+
+        #main {
+            width: 90%;
+            position: relative;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .sec1 {
+            width: 80%;
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            /* background-color: lightblue; */
+            text-align: center;
+        }
+
+        .sec1>.img_box {
+            width: 20%;
+            margin: 25px;
+            position: relative;
+        }
+
+        .sec1>.img_box {
+            width: 20%;
+            display: inline-block;
+            /* position: absolute; */
+        }
+
+        .sec1>.img_box:nth-child(1)>.sec1_title {
+            width: 80%;
+            left: 4%;
+            position: absolute;
+            color: white;
+            top: 10%;
+            transition: .5s ease-in-out;
+        }
+
+        .sec1>.img_box:nth-child(2)>.sec1_title {
+            width: 80%;
+            left: 10%;
+            position: absolute;
+            color: black;
+            top: 10%;
+            transition: .5s ease-in-out;
+        }
+
+        .sec1>.img_box:nth-child(3)>.sec1_title {
+            width: 80%;
+            left: 14%;
+            position: absolute;
+            color: black;
+            top: 10%;
+            transition: .5s ease-in-out;
+        }
+
+        .sec1>.img_box:nth-child(4)>.sec1_title {
+            width: 80%;
+            left: 12%;
+            position: absolute;
+            color: white;
+            top: 10%;
+            transition: .5s ease-in-out;
+        }
+
+        #main>div.sec1>div:nth-child(n)>div:hover {
+            font-size: 14px;
+        }
+
+        #main>div.sec2>div:nth-child(1)>div {
+            width: 80%;
+            left: 12%;
+            position: absolute;
+            color: black;
+            top: 10%;
+            transition: 0.2s ease-in-out;
+        }
+
+        #main>div.sec2>div:nth-child(2)>div {
+            width: 80%;
+            left: 12%;
+            position: absolute;
+            color: black;
+            top: 10%;
+            transition: 0.5s ease-in-out;
+        }
+
+        #main>div.sec2>div:nth-child(3)>div {
+            width: 80%;
+            left: 12%;
+            position: absolute;
+            color: white;
+            top: 10%;
+            transition: 1.5s ease-in-out;
+        }
+
+        #main>div.sec2>div:nth-child(n)>div:hover {
+            font-size: 18px;
+        }
+
+        .sec2 {
+            width: 80%;
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            /* background-color: lightgreen; */
+            text-align: center;
+        }
+
+        .sec2>.img_box {
+            width: 29%;
+            display: inline-block;
+            margin: 15px;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .img_box {
+            box-shadow: 5px 5px 5px 2px rgba(124, 124, 124, 0.2);
+            /* 將圓角應用於容器 */
+            border-radius: 15px;
+        }
+
+        .img_box img {
+            border-radius: 15px;
+            /* 將圓角應用於圖片 */
+            display: block;
+            /* 確保圖片佔據整個容器寬度 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="menu">Mac</div>
+        <div class="menu">iPhone</div>
+        <div class="menu">Watch</div>
+        <div class="menu">AirPods</div>
+        <div class="menu">TV</div>
+    </div>
+    <div id="main">
+        <div class="sec1">
+            <div class="img_box">
+                <img src="./img/1.jpg" alt="">
+                <div class="sec1_title">IPHONE 15 PRO</div>
+            </div>
+            <div class="img_box">
+                <img src="./img/2.jpg" alt="">
+                <div class="sec1_title">MACBOOK AIR</div>
+            </div>
+            <div class="img_box">
+                <img src="./img/3.jpg" alt="">
+                <div class="sec1_title">和 Apple 一起，慶‍祝‍世‍界‍地‍球‍日。 </div>
+            </div>
+            <div class="img_box">
+                <img src="./img/4.jpg" alt="">
+                <div class="sec1_title">APPLE WATCH SERIES 9</div>
+            </div>
+        </div>
+        <div class="sec2">
+            <div class="img_box">
+                <img src="./img/a.jpg" alt="">
+                <div class="sec1_title">探索 Apple Pay 的所有應用方式。 </div>
+            </div>
+            <div class="img_box">
+                <img src="./img/b.jpg" alt="">
+                <div class="sec1_title">一次訂閱，輕鬆享受四項 Apple 服務。 </div>
+            </div>
+            <div class="img_box">
+                <img src="./img/c.jpg" alt="">
+                <div class="sec1_title">
+                    購買 Apple 裝置，即可獲享 3 個月 Apple TV+ 免費訂閱服務</div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">Copyright © 2024 Apple Inc. 保留一切權利。隱私權政策 | 使用條款 | 銷售及退款 | 網站地圖</div>
+</body>
+
+</html>

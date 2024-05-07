@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(20, 20, 20);
+
+        }
+
+        .container {
+            background-color: gray;
+            width: 60%;
+            height: 129vh;
+            margin: auto;
+            background-image: url('./images/01.png');
+            background-repeat: no-repeat;
+            background-position: right top;
+            position: relative;
+        }
+
+        .div1 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            background-image: radial-gradient(lightblue, rgb(1, 85, 1), lightyellow);
+        }
+
+        .div2 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 37%;
+            background-image: radial-gradient(lightblue, rgb(2, 112, 2));
+        }
+
+        .div3 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            right: 0;
+            background-image: radial-gradient(lightblue 60%, rgb(2, 83, 2));
+        }
+
+        .div4 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 350px;
+            background-image: radial-gradient(lightblue 50%, rgb(2, 83, 2), lightyellow);
+        }
+
+        .div5 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 350px;
+            left: 37%;
+            background-image: radial-gradient(lightblue 30%, rgb(2, 83, 2) 30%, rgb(228, 136, 17) 60%, lightyellow);
+        }
+
+        .div6 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 350px;
+            right: 0;
+            background-image: radial-gradient(lightblue 30%, rgb(2, 83, 2) 30%, rgb(228, 136, 17) 60%, lightyellow 70%);
+        }
+
+        .div7 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 700px;
+            left: 0;
+            /* background-image: repeating-radial-gradient(lightblue, lightyellow 10%); */
+            background-image: repeating-radial-gradient(lightblue 0%, lightblue 20%, lightyellow 20%, lightyellow 40%);
+            /* background-image: radial-gradient(lightblue 0%, lightblue 20%, lightyellow 20%, lightyellow 40%, lightgreen 40%, lightgreen 60%, black 60%, black 80%); */
+        }
+
+        .div8 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 700px;
+            left: 37%;
+            background-image: radial-gradient(lightblue 30%, rgb(11, 116, 151) 30%, rgb(2, 83, 2) 60%, lightyellow 60%);
+        }
+
+        .div9 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 700px;
+            right: 0;
+            background-image: radial-gradient(lightblue 50%, rgb(1, 105, 139) 50%);
+        }
+
+        .div10 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 1050px;
+            left: 0;
+            /* 
+                radial-gradient(形狀 尺寸 at 位置, 顏色...)
+                形狀 circle / ellipse
+                circle 尺寸: 一個參數當半徑 位置預設中間
+                ellipse 尺寸: 兩個參數代表寬高
+            */
+            background-image: radial-gradient(ellipse 100px 50px at top 100px right 150px, lightblue, rgb(1, 105, 139));
+        }
+
+        .div11 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 1050px;
+            left: 37%;
+            /* 
+                圓形尺寸
+                closest-corner 最近的角
+                closest-side 最近的邊
+                farthest-corner 最遠的角
+                farthest-side 最遠的邊
+            */
+            background-image: radial-gradient(circle closest-corner at top 150px right 150px, lightblue, rgb(1, 105, 139));
+            /* background-image: radial-gradient(circle closest-corner, lightblue 50%, rgb(1, 105, 139) 50%); */
+            /* background-image: radial-gradient(circle closest-corner, lightblue 50%, rgb(1, 105, 139)); */
+        }
+
+        .div12 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 1050px;
+            left: 37%;
+            background-image: radial-gradient(circle closest-corner at top 150px right 150px, lightblue, rgb(1, 105, 139));
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+        <div class="div6"></div>
+        <div class="div7"></div>
+        <div class="div8"></div>
+        <div class="div9"></div>
+        <div class="div10"></div>
+        <div class="div11"></div>
+        <div class="div12"></div>
+    </div>
+
+</body>
+
+</html>

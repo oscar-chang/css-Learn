@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        span {
+            display: inline-block;
+            color: red;
+            background-color: lightpink;
+            /* border: 1px solid black; */
+            width: 50px;
+            height: 50px;
+        }
+
+        img {
+            /* display: block; */
+            /* width: 300px; */
+            /* height: 300px; */
+            /* width: 100%;
+            height: 100%; */
+            /* width: 100px;
+            height: 100px; */
+
+        }
+
+        .row {
+            clear: both;
+        }
+
+        .box {
+            float: right;
+            width: 10%;
+            background-color: lightpink;
+            /* text-align: center; */
+            /* margin: auto; */
+        }
+
+        a {
+            background-image: url("https://picsum.photos/id/20/200/300");
+            background-size: cover;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: auto;
+            margin-top: 10px;
+            text-align: center;
+            padding-top: 38px;
+            text-decoration: none;
+            border: 1px solid lightblue;
+            border-radius: 10px;
+        }
+
+        .box-block {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+        }
+
+        h1 {
+            width: 300px;
+            height: 300px;
+            background-color: lightpink;
+        }
+
+        p {
+            /* width: 300px;
+            height: 300px;
+            background-color: lightyellow; */
+        }
+
+        input {
+            /* display: inline-block; */
+            width: 300px;
+            height: 50px;
+            background-color: lightblue;
+        }
+
+        input:hover {
+            font-size: x-large;
+            display: inline-block;
+            width: 330px;
+            height: 55px;
+            background-color: lightblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- inline -->
+    <div class="container">
+        <h3>
+            inline
+        </h3>
+        <h4>
+            不換行 不變大
+        </h4>
+        <h5>
+            span,img ,input , a .....
+        </h5>
+
+        <!-- Lorem ipsum <span>dolor</span> sit, amet consectetur adipisicing elit. Praesentium, quas!
+        <br>
+        <img src="https://picsum.photos/id/20/200/300" alt="">
+        <img src="https://picsum.photos/id/22/200/300" alt="">
+        <img src="https://picsum.photos/id/24/200/300" alt=""> -->
+
+        <!-- <div class="row">
+            <div class="box">
+                <a href="">
+                </a>
+                <a href="">about</a>
+                <a href="">other</a>
+            </div>
+        </div> -->
+
+        <p>
+            <input type="text" name="" id="">
+        </p>
+        <p>
+            <input type="text" name="" id="">
+        </p>
+        <p>
+            <input type="text" name="" id="">
+        </p>
+
+    </div>
+
+    <!-- block -->
+    <div class="container">
+        <h3>
+            block
+        </h3>
+        <h4>
+            換行 變大
+        </h4>
+        <h5>
+            div,h1,ul,li,p,header,footer,nav,......
+        </h5>
+
+        <div class="box-block">
+
+        </div>
+
+        <h1>
+            h1 Lorem ipsum dolor sit amet.
+        </h1>
+        <p>
+            P Lorem ipsum dolor sit amet.
+        </p>
+    </div>
+
+    <!-- inline-block -->
+
+
+</body>
+
+</html>

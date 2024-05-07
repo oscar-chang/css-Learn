@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* , 都選 */
+        p,
+        div {
+            /* color: darkgreen; */
+        }
+
+        /* > 後代一層*/
+        div>p {
+            /* color: red; */
+        }
+
+        .my-parent>p {
+            /* color: lightpink; */
+        }
+
+        /* 空格 後代全部*/
+        div p {
+            /* color: purple; */
+        }
+
+        /* ~ 兄弟姊妹同輩 全部 */
+        .my-parent~div {
+            /* color: blue; */
+        }
+
+        /* .my-parent {
+            color: lightblue;
+        } */
+
+        /* ~ 兄弟姊妹同輩 鄰近的 */
+        #liu+div {
+            color: brown;
+        }
+
+        /*  */
+    </style>
+</head>
+
+<body>
+    <!-- , > ~ + 空格 . : -->
+
+    <div>
+        <div class="my-parent" id="liu">
+            劉備
+        </div>
+        <div>
+            劉備影分身
+        </div>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;劉禪
+        </p>
+    </div>
+
+    <div>
+        <div class="my-parent">
+            關羽
+        </div>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;關平
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;關興
+        <div>
+            <h1>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;關小興
+                </p>
+            </h1>
+        </div>
+        </p>
+    </div>
+
+
+    <div>
+        <div class="my-parent">
+            張飛
+        </div>
+    </div>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;張苞
+    </p>
+    </div>
+
+
+
+
+</body>
+
+</html>

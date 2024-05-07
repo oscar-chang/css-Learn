@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple practice</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+        }
+
+        .box1 {
+            position: absolute;
+            top: 50%;
+            background-color: blueviolet;
+            border: black 10px;
+            border-style: solid;
+        }
+
+        .box2 {
+            position: absolute;
+            top: 70%;
+            background-color: rgb(4, 130, 134);
+            padding: 10px;
+            border: black 10px;
+            border-style: solid;
+        }
+
+        .box3 {
+            position: absolute;
+            top: 90%;
+            background-color: rgb(167, 196, 3);
+            margin: 10px;
+            border: black 10px;
+            border-style: solid;
+        }
+
+        .sec {
+            width: 80%;
+            display: block;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .box4 {
+            position: relative;
+            width: 30%;
+            /* background-color: rgb(3, 196, 35); */
+            margin: 10px;
+        }
+
+        .box5 {
+            position: relative;
+            width: 30%;
+            /* background-color: rgb(3, 196, 35); */
+            margin: 10px;
+        }
+
+        .box6 {
+            position: relative;
+            width: 30%;
+            /* background-color: rgb(3, 196, 35); */
+            margin: 10px;
+        }
+
+        .box4>img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text_title {
+            /* width: 100%; */
+            display: block;
+            margin: 20px 25px;
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 0.8px;
+        }
+
+        .text_des {
+            /* width: 100%; */
+            display: block;
+            margin: 30px 25px;
+            letter-spacing: 0.4px;
+            line-height: 1.4em;
+            height: 10vh;
+            overflow: hidden;
+            /* text-decoration: underline;
+            text-decoration-color: darkgrey;
+            text-decoration-style: double; */
+        }
+
+        .text_aurhor {
+            /* width: 100%; */
+            display: block;
+            margin: 10px 25px;
+            letter-spacing: 0.4px;
+            text-align: right;
+            font-size: small;
+            letter-spacing: 0.2px;
+            text-decoration: underline;
+            text-decoration-color: darkgrey;
+            text-decoration-style: double;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .box_d {
+            display: inline-block;
+            float: left;
+            height: auto;
+            margin: 1.5%;
+            border-radius: 20px;
+            transition: 0.1s ease-in;
+        }
+
+        .box_d:hover {
+            border: black;
+            border-style: groove;
+            /* border-radius: 25px; */
+            overflow: hidden;
+            border-width: thin;
+            box-shadow: 11px 9px 7px -3px rgba(124, 124, 124, 0.2);
+            background: rgb(92, 91, 91);
+            color: white;
+        }
+
+        .box_d img {
+            border-radius: 20px;
+            transition: .2s ease-in;
+            transition: transform .2s ease-in;
+            /* 添加 transform 屬性到過渡 */
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .box_d img:hover {
+            opacity: 0.8;
+            transform: scale(1.08);
+            /* 在懸停時放大圖片 */
+        }
+
+        .img_sec {
+            position: relative;
+        }
+
+        .cover_text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+            letter-spacing: 15px;
+            z-index: 999;
+            transition: 0.8s ease-in-out;
+            text-shadow: 3px 3px #333232de;
+        }
+
+        .cover_text:hover {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1 box"></div>
+    <div class="box2 box"></div>
+    <div class="box3 box"></div>
+    <div class="sec">
+        <div class="box4 box box_d">
+            <div class="img_sec">
+                <div class="cover_text">Photo</div>
+                <img src="https://picsum.photos/500/300?random=1" alt="img1" class="img_d" title="Lorem ipsum 1">
+            </div>
+            <div class="text_title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="text_des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum odio unde vero dolor
+                quo ducimus minus laboriosam molestiae corporis.</div>
+            <div class="text_aurhor">By Oscar</div>
+        </div>
+        <div class="box5 box box_d">
+            <div class="img_sec">
+                <div class="cover_text">Photo</div>
+                <img src="https://picsum.photos/500/300?random=2" alt="img2" class="img_d" title="Lorem ipsum 2">
+            </div>
+            <div class="text_title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id.</div>
+            <div class="text_des">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed iste molestias nulla,
+                nam placeat esse pariatur possimus recusandae dolorem itaque rem optio non facere assumenda?</div>
+            <div class="text_aurhor">By Oscar</div>
+        </div>
+        <div class="box6 box box_d">
+            <div class="img_sec">
+                <div class="cover_text">Photo</div>
+                <img src="https://picsum.photos/500/300?random=3" alt="img3" class="img_d" title="Lorem ipsum 3">
+            </div>
+            <div class="text_title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="text_des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eius iste ipsum minus
+                tenetur, exercitationem, dicta voluptatibus pariatur quod consectetur harum quae numquam sapiente.</div>
+            <div class="text_aurhor">By Oscar</div>
+        </div>
+    </div>
+</body>
+
+</html>

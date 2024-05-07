@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* * {
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        } */
+
+        body {
+            background-color: lightblue;
+            width: 67%;
+            font-family: monospace;
+            margin: 0 auto;
+            background-image: linear-gradient(90deg, rgb(43, 97, 116), lightblue);
+            background-size: 400% 400%;
+            animation: action 15s ease infinite;
+        }
+
+        @keyframes action {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
+        }
+
+        .topic {
+            font-family: fantasy;
+            letter-spacing: 0.25em;
+            color: white;
+            background: #6495edc2;
+            width: 16%;
+            text-align: center;
+            padding: 3px 2px;
+            transition: background .2s ease;
+            position: relative;
+            top: 0%;
+            min-width: 70px;
+        }
+
+        .topic:hover {
+            background: #003085c2;
+        }
+
+        .new {
+            font-family: fantasy;
+            letter-spacing: 0.25em;
+            color: white;
+            background: #00b3a3ab;
+            width: 16%;
+            text-align: center;
+            padding: 5px 2px;
+            position: relative;
+            top: 0%;
+            min-width: 70px;
+        }
+
+        .new::after {
+            display: block;
+            content: "";
+            z-index: 99;
+            width: 0;
+            height: 2px;
+            background: #004942;
+            transition: width 0.1s ease-in-out 0.1s;
+            margin: 0 auto;
+        }
+
+        .new:hover::after {
+            width: 80%;
+            padding: 2px 0px;
+            margin: 2px auto;
+        }
+
+        .title {
+            /* width: 100%; */
+            margin: 0 auto;
+            text-align: center;
+            padding: 30px 0px 00px 0px;
+            text-shadow: gray 3px 2px;
+            letter-spacing: 5px;
+            font-family: sans-serif;
+            font-size: large;
+        }
+
+        .page {
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            bottom: 1.5%;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            position: relative;
+        }
+
+        table {
+            width: 100%;
+            padding: 35px 0px 95px 0px;
+            margin: 0px 0px 50px 0px;
+            /* position: relative; */
+        }
+
+        .container {
+            background-color: rgb(255, 255, 255);
+            width: 90%;
+            /* height: 100vh; */
+            margin: auto;
+            /* background-image: url('./images/01.png'); */
+            /* background-repeat: no-repeat;
+            background-position: right top; */
+            position: relative;
+        }
+
+        .fix_photo {
+            position: fixed;
+            width: 200px;
+            height: auto;
+            right: 10%;
+            bottom: 5%;
+        }
+
+        .img_block {
+            position: relative;
+            /* width: 302px;
+            height: 200px; */
+            text-align: center;
+            padding: 3%;
+            /* background: radial-gradient(#0000001f, transparent); */
+            /* border-radius: 50%; */
+            width: 35%;
+        }
+
+        .txt_block {
+            width: 88%;
+            padding: 30px 20px 55px 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        img {
+            /* position: relative; */
+            /* bottom: 0px; */
+            /* right: 0; */
+            text-align: center;
+            width: 98%;
+            box-shadow: 11px 9px 7px -3px rgba(124, 124, 124, 0.6);
+        }
+
+        .img_cover {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 23%;
+            margin: 0 auto;
+            top: 30%;
+            z-index: 9;
+            opacity: 0.5;
+        }
+
+        .img_cover {
+            box-shadow: none;
+        }
+
+        iframe {
+            box-shadow: 11px 9px 7px -3px rgba(124, 124, 124, 0.6);
+        }
+
+        .more_block {
+            position: absolute;
+            text-align: center;
+            right: 7%;
+            bottom: 5%;
+        }
+
+        .more_block>a {
+            border-radius: 7%;
+            box-shadow: 3px 5px 10px -5px rgba(124, 124, 124, 0.6);
+            padding: 5px 7px;
+        }
+
+        .description {
+            color: gray;
+            line-height: 1.4em;
+            letter-spacing: .8px;
+            font-size: 1.1em;
+        }
+
+        .tag_block {
+            position: absolute;
+            bottom: 2%;
+            display: flex;
+            float: left;
+            left: 2%;
+        }
+
+        .tag {
+            padding: 7px;
+            font-size: 1.1em;
+            color: lightpink;
+            animation: color linear 3s infinite;
+            filter: lightpink;
+            /*模糊*/
+            /* filter: blur(0px); */
+        }
+
+        @keyframes color {
+            0% {
+                color: 3ac1ed;
+            }
+
+            100% {
+                color: lightcoral;
+                filter: drop-shadow(rgb(248, 110, 207)0px 0px 0.7px);
+                /*更模糊*/
+                /* filter: blur(5px); */
+            }
+        }
+
+        a:link {
+            /* //設定還沒有瀏覽過的連結 */
+            text-decoration: none;
+            background-color: #ffffff;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        a:visited {
+            /* //設定已經瀏覽過的連結 */
+            color: #494949;
+            /* background-color: red; */
+        }
+
+        a:hover {
+            /* //設定滑鼠移經的連結 */
+            text-decoration: underline;
+            background-color: #fafafa;
+            color: gray;
+        }
+
+        a:active {
+            /* //設定正在點選的連結 */
+            text-decoration: none;
+            background-color: gray;
+            color: #fafafa;
+        }
+
+        #header {
+            height: 105px;
+            line-height: 105px;
+            font-size: 20px;
+            color: white;
+            letter-spacing: 0.4em;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #footer {
+            height: 95px;
+            line-height: 95px;
+            line-height: 105px;
+            font-size: 14px;
+            color: rgb(0, 0, 0);
+            letter-spacing: 0.2em;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        // $('.fix_photo').click(function (event) {
+        //     event.preventDefault();
+        //     $('html, body').animate({
+        //         scrollTop: $('#five_section').offset().top - 50
+        //     },
+        //         1000);
+        // });
+    </script>
+</head>
+
+<body>
+    <div id="header">INDEX | PHOTO | ABOUT | WORKS</div>
+
+    <div class="container">
+        <div class="title">
+            <h1> Travel The World </h1>
+        </div>
+        <div class="fix_photo"><a href="#tree_section"><img src="https://picsum.photos/500/300?random=999" alt=""></a>
+        </div>
+        <table>
+            <tr>
+                <td class="img_block">
+                    <img src="https://picsum.photos/500/300?random=1" alt="">
+                    <img src="https://www.look-in.com.tw/packs/media/images/logo_small-c1313bdc114eea4e647149792b8fb070.svg"
+                        alt="" class="img_cover">
+                </td>
+                <td class="txt_block">
+                    <div class="new">New</div>
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
+                    <span class="description">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione nemo odit iste architecto
+                        similique voluptates autem numquam, a nisi rerum sed cum assumenda quod quis explicabo tenetur
+                        at eum quam.
+                    </span>
+                    <div class="tag_block">
+                        <div class="tag">#photo</div>
+                        <div class="tag">#view</div>
+                        <div class="tag">#nikon</div>
+                        <div class="tag">#color</div>
+                    </div>
+                    <div class="more_block"><a href="#" target="_blank" rel="#">More...</a></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="img_block">
+                    <img src="https://picsum.photos/500/300?random=2" alt="">
+                    <img src="https://www.look-in.com.tw/packs/media/images/logo_small-c1313bdc114eea4e647149792b8fb070.svg"
+                        alt="" class="img_cover">
+                </td>
+                <td class="txt_block">
+                    <div class="topic">Topic</div>
+                    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                    <span class="description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis fuga aut nostrum, illum vel
+                        corrupti repellendus? Provident dolores dolore temporibus inventore nisi minus id amet.
+                    </span>
+                    <div class="tag_block">
+                        <div class="tag">#photo</div>
+                        <div class="tag">#view</div>
+                        <div class="tag">#nikon</div>
+                        <div class="tag">#color</div>
+                    </div>
+                    <div class="more_block"><a href="#" target="_blank" rel="#">More...</a></div>
+                </td>
+            </tr>
+            <tr id="tree_section">
+                <td class="img_block">
+                    <img src="https://picsum.photos/500/300?random=3" alt="">
+                    <img src="https://www.look-in.com.tw/packs/media/images/logo_small-c1313bdc114eea4e647149792b8fb070.svg"
+                        alt="" class="img_cover">
+                </td>
+                <td class="txt_block">
+                    <div class="topic">Topic</div>
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
+                    <span class="description">
+                        Get the same random image every time based on a seed, by adding
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quos nam voluptas sint ea sequi
+                        ipsam nobis debitis in!
+                    </span>
+                    <div class="tag_block">
+                        <div class="tag">#photo</div>
+                        <div class="tag">#view</div>
+                        <div class="tag">#nikon</div>
+                        <div class="tag">#color</div>
+                    </div>
+                    <div class="more_block"><a href="#" target="_blank" rel="#">More...</a></div>
+                </td>
+            </tr>
+            <tr id="four_section">
+                <td class="img_block">
+                    <iframe
+                        src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FOMLLineRailBike%2Fvideos%2F328503931732775%2F&show_text=false&width=560&t=0"
+                        width="98%" height="" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        allowFullScreen="true"></iframe>
+                </td>
+                <td class="txt_block">
+                    <div class="new">New</div>
+                    <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    <span class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, sit quis. Ipsa laborum
+                        inventore veritatis at numquam.
+                    </span>
+                    <div class="tag_block">
+                        <div class="tag">#photo</div>
+                        <div class="tag">#view</div>
+                        <div class="tag">#nikon</div>
+                        <div class="tag">#color</div>
+                    </div>
+                    <div class="more_block"><a href="#" target="_blank" rel="#">More...</a></div>
+                </td>
+            </tr>
+            <tr id="five_section">
+                <td class="img_block">
+                    <img src="https://picsum.photos/500/300?random=5" alt="">
+                    <img src="https://www.look-in.com.tw/packs/media/images/logo_small-c1313bdc114eea4e647149792b8fb070.svg"
+                        alt="" class="img_cover">
+                </td>
+                <td class="txt_block">
+                    <div class="topic">Topic</div>
+                    <h3>Lorem ipsum dolor sit amet.</h3>
+                    <span class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolorum vero consectetur
+                        nostrum ex iusto ea repudiandae, exercitationem vel magnam magni unde veniam alias ab!
+                    </span>
+                    <div class="tag_block">
+                        <div class="tag">#photo</div>
+                        <div class="tag">#view</div>
+                        <div class="tag">#nikon</div>
+                        <div class="tag">#color</div>
+                    </div>
+                    <div class="more_block"><a href="#" target="_blank" rel="#">More...</a></div>
+                </td>
+            </tr>
+            <tr id="six_section">
+                <td class="img_block">
+                    <img src="https://picsum.photos/500/300?random=6" alt="">
+                    <img src="https://www.look-in.com.tw/packs/media/images/logo_small-c1313bdc114eea4e647149792b8fb070.svg"
+                        alt="" class="img_cover">
+                </td>
+                <td class="txt_block">
+                    <div class="new">New</div>
+                    <h3>Lorem ipsum dolor sit amet.</h3>
+                    <span class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, facere possimus!
+                    </span>
+                    <div class="tag_block">
+                        <div class="tag">#photo</div>
+                        <div class="tag">#view</div>
+                        <div class="tag">#nikon</div>
+                        <div class="tag">#color</div>
+                    </div>
+                    <div class="more_block"><a href="#" target="_blank" rel="#">More...</a></div>
+                </td>
+            </tr>
+            <tr id="seven_section">
+                <td class="img_block">
+                    <img src="https://picsum.photos/500/300?random=7" alt="">
+                    <img src="https://www.look-in.com.tw/packs/media/images/logo_small-c1313bdc114eea4e647149792b8fb070.svg"
+                        alt="" class="img_cover">
+                </td>
+                <td class="txt_block">
+                    <div class="topic">Topic</div>
+                    <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    <span class="description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem explicabo nam ea atque nobis
+                        inventore, tempore ipsam maiores, vitae architecto quod, maxime dignissimos error! Dolorum quos
+                        sit debitis harum dolor modi aut quam? Expedita, dolorem!
+                    </span>
+                    <div class="tag_block">
+                        <div class="tag">#photo</div>
+                        <div class="tag">#view</div>
+                        <div class="tag">#nikon</div>
+                        <div class="tag">#color</div>
+                    </div>
+                    <div class="more_block"><a href="#" target="_blank" rel="#">More...</a></div>
+                </td>
+            </tr>
+            <tr id="eight_section">
+                <td class="img_block">
+                    <iframe width="98%" height="" src="https://www.youtube.com/embed/oDOGlDv5a-Q"
+                        title="【LOOKin街訪】別再說打工很輕鬆！大學生打工甘苦談~員工兼保母?!老闆比奧客還難搞！職場生存vs草莓" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </td>
+                <td class="txt_block">
+                    <div class="topic">Topic</div>
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum.</h3>
+                    <span class="description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, voluptatum pariatur ex,
+                        repellat similique quod vel quos fugit ea quis architecto repudiandae cumque omnis consectetur
+                        fugiat voluptas.
+                    </span>
+                    <div class="tag_block">
+                        <div class="tag">#photo</div>
+                        <div class="tag">#view</div>
+                        <div class="tag">#nikon</div>
+                        <div class="tag">#color</div>
+                    </div>
+                    <div class="more_block"><a href="#" target="_blank" rel="#">More...</a></div>
+                </td>
+            </tr>
+        </table>
+        <div class="page">
+            ＜ 1 | 2 | 3 | 4 ... ＞
+        </div>
+    </div>
+
+    <div id="footer"> photo by Oscar ©2000 - 2024</div>
+
+</body>
+
+</html>

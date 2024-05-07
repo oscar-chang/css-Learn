@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #cat {
+      width: 545px;
+      height: 480px;
+      background-image: url(./cat.png);
+      animation: move .7s steps(8, end) infinite;
+    }
+    @keyframes move {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: -4360px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="cat"></div>
+</body>
+</html>

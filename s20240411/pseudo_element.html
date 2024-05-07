@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        .price {
+            text-align: left;
+        }
+
+        .price::before {
+            content: '$';
+        }
+
+        .price::after {
+            content: '元';
+        }
+
+        /* odd 基數  even偶數*/
+        tr:nth-child(even) {
+            background-color: red;
+        }
+
+        td:hover {
+            background-color: green;
+            font-size: x-large;
+        }
+
+
+        /*  
+
+        其他文件參考 : https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child
+
+        tr:nth-child(odd) or tr:nth-child(2n+1)
+        表示 HTML 表格中的奇数行：1、3、5……。
+
+        tr:nth-child(even) or tr:nth-child(2n)
+        表示 HTML 表格中的偶数行：2、4、6……。
+
+        :nth-child(7)
+        表示第 7 个元素。
+
+        :nth-child(5n)
+        表示第 5、10、15……个元素。第一个匹配的元素是 0 [=5x0]，但由于元素的索引是从 1 开始的而 n 从 0 开始，所以不会匹配任何元素。这乍一看可能有点奇怪，但是当公式中的 B 部分为 >0 的值时，就会变得更有意义，就像下面的示例一样。
+        */
+    </style>
+
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th width="15%">
+                ID
+            </th>
+            <th width="15%">
+                商品名稱
+            </th>
+            <th>
+                價格
+            </th>
+        </tr>
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                咖啡
+            </td>
+            <td class="price">
+                100
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2
+            </td>
+            <td>
+                花茶
+            </td>
+            <td class="price">
+                200
+            </td>
+        </tr>
+        <tr>
+            <td>
+                3
+            </td>
+            <td>
+                礦泉水
+            </td>
+            <td class="price">
+                50
+            </td>
+        </tr>
+        <tr>
+            <td>
+                3
+            </td>
+            <td>
+                礦泉水
+            </td>
+            <td class="price">
+                50
+            </td>
+        </tr>
+        <tr>
+            <td>
+                3
+            </td>
+            <td>
+                礦泉水
+            </td>
+            <td class="price">
+                50
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

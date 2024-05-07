@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1 {
+      width: 300px;
+      height: 300px;
+      background-image: radial-gradient(red, orange);
+    }
+    #div2 {
+      width: 300px;
+      height: 300px;
+      background-image: radial-gradient(red 80%, orange);
+    }
+    #div3 {
+      width: 300px;
+      height: 300px;
+      background-image: radial-gradient(red 50%, orange 50%);
+    }
+    #div4 {
+      width: 300px;
+      height: 300px;
+      /* 
+        radial-gradient(形狀 尺寸 at 位置, 顏色...)
+        形狀 circle ellipse
+        circle 尺寸: 一個參數當半徑
+        ellipse 尺寸: 兩個參數代表寬高
+      */
+      background-image: radial-gradient(ellipse 100px 50px at right 50px, red, pink);
+    }
+    #div5 {
+      width: 500px;
+      height: 300px;
+      /*
+        圓形尺寸
+        closest-corner 最近的角
+        closest-side 最近的邊
+        farthest-corner 最遠的角
+        farthest-side 最遠的邊
+      */
+      /* background-image: radial-gradient(circle 50px at 450px 50px, red, orange); */
+      background-image: radial-gradient(circle farthest-corner at 450px 50px, red, orange);
+    }
+    #div6 {
+      width: 500px;
+      height: 300px;
+      background-image: repeating-radial-gradient(gray 0%, gray 40%, black 40%, black 80%);
+    }
+  </style>
+</head>
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+  <div id="div3"></div>
+  <div id="div4"></div>
+  <div id="div5"></div>
+  <div id="div6"></div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+
+            /* flex-container -> container  */
+            /* item -> flex-container */
+            /* display: flex;
+            align-items: center; */
+
+            width: 80%;
+            height: 90vh;
+            background-color: #ccc;
+            margin: auto;
+        }
+
+        .flex-container {
+            width: 80%;
+            height: 90%;
+            background-color: lightblue;
+            margin: auto;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 300px;
+            height: 300px;
+            margin-left: 50px;
+            background-color: lightpink;
+            /* text-align: center;
+            padding-top: 140px; */
+        }
+
+        .item-hide {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- row = flex-container -->
+        <div class="flex-container">
+            <div class="item">
+                1
+            </div>
+            <div class="item">
+                2
+            </div>
+            <div class="item">
+                3
+            </div>
+            <div class="item">
+                4
+            </div>
+            <div class="item">
+                5
+            </div>
+            <div class="item item-hide">
+                6
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

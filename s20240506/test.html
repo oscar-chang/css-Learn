@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            margin: 0 auto;
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            /* 將子項目水平排列 */
+            justify-content: center;
+            /* 左右置中 */
+            align-items: center;
+            /* 上下置中 */
+            background-color: antiquewhite;
+            height: auto;
+            flex-wrap: wrap;
+            /* 允許項目自動斷行 */
+        }
+
+        .item {
+            width: 30%;
+            height: 300px;
+            margin: 30px 20px;
+            /* 設定項目之間的間距 */
+            /* padding: 10px; */
+            /* 可選：增加內部填充 */
+            background-color: aquamarine;
+            text-align: center;
+        }
+
+        .item-row {
+            display: flex;
+            flex-direction: row;
+            /* 將子項目水平排列 */
+            justify-content: center;
+            /* 左右置中 */
+            align-items: center;
+            /* 上下置中 */
+            background-color: rgb(115, 176, 255);
+            width: 90%;
+            height: 300px;
+            flex-wrap: wrap;
+            /* 允許項目自動斷行 */
+            margin: 0 auto;
+        }
+
+        .row {
+            width: 80%;
+            margin: 0 10px;
+            /* 設定項目之間的間距 */
+            padding: 10px;
+            /* 可選：增加內部填充 */
+            background-color: rgb(216, 252, 57);
+            text-align: center;
+            /* line-height: 300px; */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="item">
+            <div class="item-row">
+                <div class="row">1</div>
+                <div class="row">2</div>
+                <div class="row">3</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-row">
+                <div class="row">1</div>
+                <div class="row">2</div>
+                <div class="row">3</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-row">
+                <div class="row">1</div>
+                <div class="row">2</div>
+                <div class="row">3</div>
+            </div>
+        </div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+
+</body>
+
+</html>

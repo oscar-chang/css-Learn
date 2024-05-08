@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100%;
+            margin: auto;
+            background-color: lightblue;
+            padding-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box {
+            text-align: center;
+            padding: 20px;
+            width: 80%;
+            height: 30vh;
+            background-color: lightpink;
+            margin: auto;
+            margin-top: 10px;
+
+        }
+
+        @media screen and (min-width: 768px) {
+            .container {
+                background-color: lightgreen;
+            }
+
+            .row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .box {
+
+                width: 25%;
+                height: 30vh;
+                background-color: lightyellow;
+                margin: auto;
+                margin-top: 10px;
+
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .container {
+                background-color: lightgreen;
+            }
+
+            .row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .box {
+
+                width: 20%;
+                height: 30vh;
+                background-color: lightcoral;
+                margin: auto;
+                margin-top: 10px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                1
+            </div>
+            <div class="box">
+                2
+            </div>
+            <div class="box">
+                3
+            </div>
+            <div class="box">
+                4
+            </div>
+            <div class="box">
+                5
+            </div>
+            <div class="box">
+                6
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+
+</html>

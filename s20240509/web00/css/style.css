@@ -1,0 +1,257 @@
+/* index css */
+
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* header */
+.header {
+    width: 1024px;
+    height: 65px;
+    /* background-color: lightblue; */
+    margin: auto;
+    border: 1px black solid;
+    border-bottom: 0px;
+}
+
+.header>a>img {
+    margin: 0 auto;
+    display: block;
+    padding: 2px 0px;
+}
+
+/* container */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 1024px;
+    height: calc(768px - 65px - 25px);
+    /* background-color: lightgray; */
+    margin: auto;
+    border: 1px black solid;
+}
+
+/* aside */
+.aside {
+    width: 215px;
+    height: calc(768px - 65px - 20px);
+    /* background-color: aqua; */
+
+    display: flex;
+    flex-direction: column;
+    /* border: 1px black solid;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 0px; */
+}
+
+.aside-header {
+    /* width: 215px; */
+    /* height: calc(100% - 25px); */
+    flex-basis: calc(100% - 25px);
+    /* background-color: blueviolet; */
+    border: 1px black solid;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    font-family: '標楷體';
+    font-weight: 500;
+}
+
+.aside-footer {
+    width: 215px;
+    /* height: 20px; */
+    flex-basis: 20px;
+    /* background-color: lightpink; */
+    /* border: 1px black solid; */
+    /* border-bottom: 0px; */
+}
+
+
+/* main */
+.main {
+    /* width: 770px; */
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 25px);
+    /* background-color: blue; */
+    border: 1px black solid;
+    border-top: 0px;
+    border-right: 0px;
+    o
+}
+
+.main-header {
+    /* width: 770px; */
+    height: 29px;
+    /* background-color: lightpink; */
+    border: 1px black solid;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    /* border-bottom: 0px; */
+}
+
+.main-content {
+    /* width: 770px; */
+    height: calc(100% - 29px);
+    /* background-color: lightskyblue; */
+    /* border: 1px black solid; */
+}
+
+
+/* footer */
+.footer {
+    width: 1024px;
+    height: 20px;
+    /* background-color: lightgreen; */
+    border: 1px black solid;
+    border-top: 0px;
+    margin: auto;
+}
+
+
+.banner-box {
+    width: 770px;
+    height: 29px;
+    font-size: 24px;
+    color: #0000FF;
+    font-family: '標楷體';
+    font-size: x-large;
+}
+
+.menu-ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-li {
+    width: 100%;
+    color: #000000;
+    font-size: 16px;
+    border-radius: 10px;
+    background-image: url('/images/menu1.png');
+    background-size: cover;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    margin: 5px auto;
+}
+
+.menu-li:hover {
+    background-image: url('/images/menu2.png');
+    background-size: cover;
+    text-decoration: underline;
+}
+
+.aside-title {
+    font-size: x-large;
+    text-align: center;
+    margin: 20px auto;
+    /* text-decoration: black 1px groove; */
+    border-bottom: 2px groove black;
+    border-bottom-width: 2px;
+    width: 110px;
+    color: #FF00FF;
+    padding: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.date {
+    font-family: '標楷體';
+    text-align: center;
+    color: #000000;
+    font-size: 16px;
+}
+
+.main-img {
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    padding: 0;
+    margin: 20px auto;
+}
+
+.main-img>img {
+    margin: auto;
+    width: 100%;
+    height: inherit;
+}
+
+.main-desc {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    font-size: 24px;
+    font-family: '標楷體';
+    font-weight: bold;
+    font-style: oblique;
+    color: #0000FF;
+}
+
+.footer-txt {
+    font-family: '標楷體';
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* guitar_history css */
+.history_bg {
+    background-image: url('/images/0101.jpg');
+    height: 3000px;
+    /* display: block; */
+}
+
+.h-title {
+    font-size: 18px;
+    font-family: '標楷體';
+    color: #FF0000;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.h-menu {
+    display: flex;
+    flex-direction: row;
+
+    margin: 10px auto;
+    width: 100%;
+    justify-content: center;
+}
+
+.h-menu-li {
+    width: 20%;
+    padding: 5px 7px;
+    text-align: center;
+}
+
+.h-desc {
+    color: #FF0000;
+    font-size: 16px;
+    font-family: '標楷體';
+    width: 80%;
+    /* float: left; */
+    padding: 10px 10px;
+    margin: auto;
+    line-height: 20px;
+    height: 530px;
+    overflow: auto;
+}
+
+th {
+    width: 120px;
+    text-align: left;
+}

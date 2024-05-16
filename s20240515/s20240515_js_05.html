@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="myID">
+        Hello MyID
+    </div>
+
+    <script>
+        console.log('Hello JS :)');
+        // var let const
+
+        // 少用var
+        // 多用let const
+
+        let i = 0;
+        i = 20;
+        console.log('i', i);
+
+        const pi = 3.14;
+        // pi = 55688;
+        console.log('pi', pi);
+        array = [1, 2, 3];
+
+        let sum = 0;
+        for (let index = 0; index < array.length; index++) {
+            let test = 0;
+            sum += index;
+            const element = array[index];
+        }
+        // console.log(test);
+        console.log('sum', sum);
+
+        const myArr = [1, 2, 3, 4, 5];
+        myArr.push(55688)
+
+        console.log('myArr', myArr);
+
+        let myID = document.getElementById('myID');
+        myID.innerText = 'change MyID Text';
+        let getMyIDText = myID.innerText;
+        console.log('getMyIDText', getMyIDText);
+
+        myID = 'error ....';
+        console.log('myID', myID);
+
+        let name = 'kai';
+        let mobile = '0911-111-111';
+        // 1
+        result1 = "Hello" + name + mobile;
+        console.log('result1', result1);
+
+        // 2
+        result2 = `Hello ${name}`;
+        console.log('result2', result2);
+
+    </script>
+</body>
+
+</html>

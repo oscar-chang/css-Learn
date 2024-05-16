@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .my-red {
+            color: red;
+        }
+
+        .my-bgcolor {
+            background-color: #ccc;
+        }
+
+        .my-style {
+            color: blue;
+            background-color: lightyellow;
+        }
+
+        #my-styles {
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        A heading
+    </h1>
+    <a href="" id="myA">Link text</a>
+    <p class="myP">
+        Lorem ipsum dolor sit amet.
+    </p>
+    <script>
+        // h1 .....red 
+    </script>
+
+
+    <!-- js or jqery -->
+    <script>
+        // 方法一
+        $(document).ready(function () {
+            $('h1').attr('class', 'my-style');
+            $('p').attr('class', 'my-style');
+            $('a').attr('class', 'my-style');
+
+            $('a').attr('id', 'my-styles');
+
+            // $('h1').attr('class', 'my-red my-bgcolor');
+            // $('p').attr('class', 'my-red my-bgcolor');
+            // $('a').attr('class', 'my-red my-bgcolor');
+
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- css -->
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="red">
+        red
+    </div>
+
+    <div id="green">
+        green
+    </div>
+
+    <div id="blue">
+        blue
+    </div>
+
+    <!-- js or jqery -->
+    <script>
+
+        document.getElementById('red').style.color = 'red';
+        document.getElementById('green').style.color = 'green';
+        document.getElementById('blue').style.color = 'blue';
+        // 方法一
+        $(document).ready(function () {
+            // $('#red').css('color','red');
+            // $('#red').css('background-color','#ccc');
+
+            // $('#green').css('color','green');
+            // $('#blue').css('color','blue');
+
+
+            // const red = $('#red');
+            // console.log('red', red);
+            // red.css('color',"red")
+
+        });
+
+        // 方法二
+        $(function () {
+
+            // jQuery methods go here...
+
+        });
+    </script>
+</body>
+
+</html>

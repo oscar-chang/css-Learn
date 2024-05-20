@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <style>
+        .chang_color {
+            font-size: x-large;
+            padding: 35px;
+            margin: 15px;
+            border-radius: 15px;
+        }
+
+        #ch_a {
+            color: black;
+        }
+
+        #ch_b {
+            color: Blue;
+        }
+
+        #ch_c {
+            color: Red;
+        }
+
+        #ch_d {
+            color: Green;
+        }
+
+        .result {
+            padding: 30px;
+            font-size: x-large;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="ch_a" class="chang_color" value="Black">Black</button>
+    <button id="ch_b" class="chang_color" value="Blue" onclick="change()">Blue</button>
+    <button id="ch_c" class="chang_color" value="Red">Red</button>
+    <button id="ch_d" class="chang_color" value="Green">Green</button>
+
+    <div id="result">顯示顏色</div>
+
+    <script>
+
+        /* JQ  實現點擊事件四種寫法 */
+        function change() {
+            $('#result').text('Blue');
+        }
+
+        $(document).ready(function () {
+            $("#ch_a").click(function () {
+                $('#result').text('Black');
+                //alert("The paragraph was clicked.");
+            });
+
+            $(document).on("click", "#ch_c", function () {
+                $('#result').text('Red');
+                //alert("The paragraph was clicked.");
+            });
+
+            $("#ch_d").on("click", function () {
+                $('#result').text('Green');
+            });
+
+        });
+    </script>
+</body>
+
+</html>

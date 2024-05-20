@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- css -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: auto;
+            margin-bottom: 20px;
+            text-align: center;
+
+            /* background-color:lightblue; */
+            /* width: 80%; */
+        }
+
+        .myBtn {
+            width: 200px;
+            height: 200px;
+            /* background-color: ; */
+            font-size: x-large;
+            border: 2px solid black;
+        }
+
+        #blackBtn {
+            color: black;
+        }
+
+        #redBtn {
+            color: red;
+        }
+
+        #blueBtn {
+            color: blue;
+        }
+
+        #resultSpan {
+            color: red;
+        }
+
+        #resultDiv {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+        <h1>color change</h1>
+    </header>
+    <div class="container">
+        <button type="button" id="blackBtn" class="myBtn">blackBtn</button>
+        <button type="button" id="blueBtn" class="myBtn">blueBtn</button>
+        <button type="button" id="redBtn" class="myBtn">redBtn</button>
+    </div>
+
+    <div class="container">
+        <div id="resultDiv">
+            Hello <span id="resultSpan">XXX</span> color
+        </div>
+    </div>
+
+
+    <!-- js or jqery -->
+    <script>
+        // 方法一
+        $(document).ready(function () {
+
+            // 1.綁定
+
+            // jquery obj
+            const blackBtn = $('#blackBtn');
+            const blueBtn = $('#blueBtn');
+            const redBtn = $('#redBtn');
+            const resultSpan = $('#resultSpan');
+
+            console.log('blueBtn', blueBtn);
+
+            // 原生js
+            // const blueBtnJs = document.getElementById('blueBtn');
+            // console.log('blueBtnJs', blueBtnJs);
+
+
+            // 2.action / method 
+            blackBtn.click(function () {
+                console.log('blackBtn ok');
+                resultSpan.text('BLACK');
+                resultSpan.css('color', 'black');
+            })
+
+            blueBtn.click(function () {
+                console.log('blueBtn ok');
+                resultSpan.text('BLUE');
+                resultSpan.css('color', 'blue');
+            })
+
+            redBtn.click(function () {
+                console.log('redBtn ok');
+                resultSpan.text('RED');
+                resultSpan.css('color', 'red');
+            })
+
+
+        });
+        //jquery end
+
+    </script>
+</body>
+
+</html>

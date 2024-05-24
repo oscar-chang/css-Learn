@@ -183,17 +183,17 @@
 
             <h1>AJAX</h1>
             <table>
-            <tr id="title">
+            <!-- <tr id="title">
                 <td class="id title">Id</td>
                 <td class="name title">Name</td>
                 <td class="pic title">Pic</td>
                 <td class="price title">Price</td>
-            </tr>
-            <tr>
-                <td class="test_id"></td>
+            </tr> -->
+            <tr id="res_content">
+                <!-- <td class="test_id"></td>
                 <td class="test_name"></td>
                 <td class="test_pic"></td>
-                <td class="test_price"></td>
+                <td class="test_price"></td> -->
             </tr>
                 <?php 
                     // foreach ($data as $value) {
@@ -227,12 +227,28 @@
                 dataType: "json",
                 success: function (res) {
                     console.log('res:',res);
-                    $(".test_id").text(res[0].id);
-                    $(".test_price").text(res[0].price);
-                    $(".test_name").text(res[0].name);
-                    let pic = '<img src="img/'+res[0].pic+'" alt="">';
-                    $(".test_pic").html(pic);
+                    // $(".test_id").text(res[0].id);
+                    // $(".test_price").text(res[0].price);
+                    // $(".test_name").text(res[0].name);
+                    // let pic = '<img src="img/'+res[0].pic+'" alt="">';
+                    // $(".test_pic").html(pic);
                     
+                    res.forEach(function(res) {
+                        $('#res_content').append(
+                            '<tr><td class="test_id">'+ res.id +'</td>'+
+                            '<td class="test_name">'+ res.name +'</td>'+
+                            '<td class="test_pic"><img src="img/'+ res.pic +'" alt=""></td>'+
+                            '<td class="test_price">'+ res.price +'</td></tr>');
+
+                        // $('#items').append(
+                        //     '<div class="item">' +
+                        //     '<p>編號: ' + item.id + '</p>' +
+                        //     '<p>姓名: ' + item.name + '</p>' +
+                        //     '<p>價錢: ' + item.price + '</p>' +
+                        //     '<p>照片: <img src="' + item.photo + '" alt="' + item.name + '"></p>' +
+                        //     '</div>'
+                        // );
+                    });
                 }
             })
         });

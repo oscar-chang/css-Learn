@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flexbox與margin的關係</title>
+  <style>
+    .flexbox {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flexbox" style="justify-content: space-between;">
+    <div class="flex-item">item1</div>
+    <div class="flex-item">item2</div>
+  </div>
+  <div class="flexbox">
+    <div class="flex-item" style="margin-right:auto;">item1</div>
+    <div class="flex-item">item2</div>
+  </div>
+</body>
+
+</html>

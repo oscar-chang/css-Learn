@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 原生變數</title>
+  <style>
+    /* 全域變數 */
+    /* -- 指宣告的意思 */
+    :root {
+      --bg-self: blue;
+    }
+
+    .bg-self {
+      /* 區域變數 */
+      --text-self: white;
+      /* var() 使用 CSS 原生變數 */
+      background-color: var(--bg-self);
+      color: var(--text-self);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-self">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam repellendus, iusto
+    reiciendis, aliquid accusamus enim saepe vel quis odio optio fugiat magnam quae voluptas sit rerum ipsum eaque?
+    Harum, perferendis.</div>
+</body>
+
+</html>

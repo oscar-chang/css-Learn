@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .flex-box {
+      margin: auto;
+      display: flex;
+      background: black;
+      width: 900px;
+      height: 300px;
+      /* 當宣告彈性盒以下這些屬性自動產生，我們是看不到，但你要知道 */
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+
+    /*
+      當彈性盒產生時，彈性項目預設屬性如下
+      flex: 0 1 auto;
+
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto;
+    */
+
+    .flex-item:nth-child(1) {
+      background-color: lightblue;
+    }
+
+    .flex-item:nth-child(2) {
+      background-color: lightgreen;
+    }
+
+    .flex-item:nth-child(3) {
+      background-color: lightcoral;
+    }
+
+    .flex-item:nth-child(4) {
+      background-color: deepskyblue;
+    }
+
+    .flex-item:nth-child(5) {
+      background-color: deeppink;
+    }
+
+    .flex-item:nth-child(6) {
+      background-color: darkgreen;
+    }
+
+    /* 伸展係數，把剩餘空間等分分給彈性項目 */
+    .flex-grow {
+      flex-grow: 1;
+    }
+
+    /* 收縮係數，設成 0，會產生爆版 */
+    .flex-shrink {
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>彈性盒(預設屬性)</h1>
+  <div class="flex-box">
+    <div class="flex-item" style="width:100px;flex-basis:0;">01</div>
+    <div class="flex-item" style="width:200px;flex-basis:0;">02</div>
+    <div class="flex-item" style="width:300px;flex-basis:0;">03</div>
+  </div>
+
+
+  <h1>flex-grow</h1>
+  <div class="flex-box">
+    <div class="flex-item flex-grow">01</div>
+    <div class="flex-item flex-grow">02</div>
+    <div class="flex-item flex-grow">03</div>
+  </div>
+
+  <h1>flex-shrink</h1>
+  <div class="flex-box">
+    <div class="flex-item flex-shrink">Lorem ipsum dolor sit amet.</div>
+    <div class="flex-item flex-shrink">Lorem ipsum dolor sit amet.</div>
+    <div class="flex-item flex-shrink">Lorem ipsum dolor sit amet.</div>
+    <div class="flex-item flex-shrink">Lorem ipsum dolor sit amet.</div>
+    <div class="flex-item flex-shrink">Lorem ipsum dolor sit amet.</div>
+    <div class="flex-item flex-shrink">Lorem ipsum dolor sit amet.</div>
+    <div class="flex-item flex-shrink">Lorem ipsum dolor sit amet.</div>
+  </div>
+</body>
+
+</html>

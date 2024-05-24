@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    /*  
+      before、after => 偽元素，大部分的 html 元素都可以建立偽元素，一個叫 before，另一個叫 after
+      目的用來修飾元素，就不用多一個標籤來修飾
+    */
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #000;
+      margin: auto;
+      position: relative;
+      transition: 0.5s;
+      perspective: 300px;
+    }
+
+    /* 偽元素誕生時為 inline 行內元素 */
+    .box::before {
+      /* content 一定要寫 */
+      content: "";
+      /* 絕對定位可以自動轉型成 block */
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: red;
+      right: 100px;
+      transition: 0.5s;
+    }
+
+    .box::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: blue;
+      left: 100px;
+      transition: 0.5s;
+    }
+
+    .box:hover {
+      transform: rotate(-360deg);
+      transition-delay: 0.1s;
+      transform-origin: 0 300px;
+    }
+
+    .box:hover::before {
+      background: darkmagenta;
+      transform: rotate(360deg) translate(-100px, -100px);
+      transition-delay: 0.2s;
+    }
+
+    .box:hover::after {
+      background: darkorange;
+      transform: rotate(360deg) translate(100px, 100px);
+      transition-delay: 0.3s;
+    }
+
+    .clearfix::after {
+      display: block;
+      clear: both;
+      content: '';
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <!-- before -->
+    <span>Hello</span>
+    <!-- after -->
+  </div>
+
+  <div class="clearfix" style="background:darkgreen;">
+    <div style="float:left;">1</div>
+    <div style="float:right">2</div>
+    <!-- <div style="clear: both;"></div> -->
+  </div>
+
+  <!-- animate__animated 是必須的，animate__xxxxxxx，xxxxxxx 是動畫名稱，可以到 Animate.css 右邊側欄找 -->
+  <h1 class="animate__animated animate__backInUp">An animated element</h1>
+</body>
+
+</html>

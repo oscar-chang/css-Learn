@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>音樂歌詞天地</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* .myResult {
+            display: none;
+        } */
+
+        /* #mySpin {
+            display: none;
+        }
+
+        #tableBox {
+            display: none;
+        } */
+
+        /* .result-box {
+            display: none !important;
+        } */
+
+        #table-box>tbody>tr>td.result-box.myResult1>img {
+            /* margin: 5%;
+            width: 50%; */
+        }
+
+        .result {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+
+        .myResult1-text,
+        .myResult2-text,
+        .myResult3-text {
+            display: inline-flex;
+        }
+
+        #mySpin {
+            color: gray;
+            opacity: 0.8;
+        }
+
+        .btn-color {
+            background-color: black;
+            transition: .2s ease-in;
+        }
+
+        .rotate {
+            animation: rotation 30s linear;
+            /* infinite */
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(359deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">音樂歌詞天地</h1>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary goBtn" type="button" id="goBtn1" data-val=".myResult1">屋頂</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary goBtn" type="button" id="goBtn2" data-val=".myResult2">姊姊</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary goBtn" type="button" id="goBtn3" data-val=".myResult3">突然好想你</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 text-center">
+        <div class="spinner-border" id="mySpin"></div>
+    </div>
+
+    <div class="result">
+        <div class="result-box myResult1">
+            屋頂
+        </div>
+        <div class="result-box myResult2">
+            姊姊
+        </div>
+        <div class="result-box myResult3">
+            突然好想你
+        </div>
+    </div>
+
+    <div class="container mt-5 text-center">
+        <table id="table-box" class="">
+            <!-- <thead> -->
+
+            <!-- </thead> -->
+            <tbody>
+                <tr>
+                    <td class="result-box myResult1 mx-30 col-4">
+                        <img class="img-fluid" src="https://i.kfs.io/album/global/54835,0v1/fit/500x500.jpg" alt="">
+                    </td>
+                    <td>
+                        <span class="result-box myResult1 myResult1-text mx-50 col-8">
+                            (周杰倫)半夜睡不著覺 把心情哼成歌 只好到屋頂找另一個夢境<br>
+                            (Landy)睡夢中被敲醒 我還是不確定 怎會有動人弦律在對面的屋頂<br>
+                            (Landy)我悄悄關上門 帶著希望上去 原來是我夢裡常出現的那個人<br>
+                            <br>
+                            (周杰倫)那個人不就是我夢裡那模糊的人 我們有同樣的默契<br>
+                            (周杰倫)用天線 排成愛你的形狀 Ｈｏ～Ｈｏ～<br>
+                            (Landy) 用天線 排成愛妳的形狀 Ｈｏ～Ｈｏ～<br>
+                            <br>
+                            (Landy)在屋頂唱著你的歌 讓星星點綴成最浪漫的夜晚<br>
+                            (周杰倫) 在屋頂和我愛的人 最浪漫的夜晚<br>
+                            (合)擁抱這時刻 這一分一秒全都停止(周杰倫)愛開始糾結<br>
+                            <br>
+                            (Landy)在屋頂唱著你的歌 將泛黃的夜獻給最孤獨的月<br>
+                            (周杰倫) 在屋頂和我愛的人 獻給最孤獨的月<br>
+                            (合)擁抱這時刻 這一分一秒全都停止(周杰倫)愛開始糾結<br>
+                            (合)夢有你而美<br>
+                            <br>
+                            (周杰倫)半夜睡不著覺 把心情哼成歌 只好到屋頂找另一個夢境<br>
+                            (Landy)睡夢中被敲醒 我還是不確定 怎會有動人弦律在對面的屋頂<br>
+                            (Landy)我悄悄關上門 帶著希望上去 原來是我夢裡常出現的那個人<br>
+                            <br>
+                            (周杰倫)那個人不就是我夢裡那模糊的人 我們有同樣的默契<br>
+                            (周杰倫)用天線 排成愛你的形狀 Ｈｏ～Ｈｏ～<br>
+                            (Landy) 用天線 排成愛妳的形狀 Ｈｏ～Ｈｏ～<br>
+                            <br>
+                            (Landy)在屋頂唱著你的歌 讓星星點綴成最浪漫的夜晚<br>
+                            (周杰倫) 在屋頂和我愛的人 最浪漫的夜晚<br>
+                            (合)擁抱這時刻 這一分一秒全都停止(周杰倫)愛開始糾結<br>
+                            <br>
+                            (Landy)在屋頂唱著你的歌 將泛黃的夜獻給最孤獨的月<br>
+                            (周杰倫) 在屋頂和我愛的人 獻給最孤獨的月<br>
+                            (合)擁抱這時刻 這一分一秒全都停止(周杰倫)愛開始糾結<br>
+                            (合)夢有你而美<br>
+                            <br>
+                            (Landy)讓我愛你是誰 讓你愛我是誰 怎會有動人弦律環繞在我倆的身邊<br>
+                            (周杰倫) 是我～ 是妳～ 動人弦律環繞在我倆的身邊<br>
+                            <br>
+                            (Landy)讓我愛你是誰 讓你愛我是誰 原來是這屋頂有美麗的邂逅<br>
+                            (周杰倫) 是我～ 是妳～ 這屋頂有美麗的邂逅<br>
+                            <br>
+                            (周杰倫)在屋頂唱著你的歌 在屋頂和我愛的人<br>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+
+
+            <tbody>
+                <tr>
+                    <td class="result-box myResult2 mx-30 col-4">
+                        <img class="img-fluid" src="https://i.kfs.io/album/global/1969667,1v1/fit/500x500.jpg" alt="">
+                    </td>
+                    <td>
+                        <span class="result-box myResult2 myResult2-text mx-50 col-8">
+                            跳針跳針跳針跳針跳針跳針跳針跳<br>
+                            跳針跳針跳針跳針跳針跳針跳針跳<br>
+                            咚吱咚吱咚吱咚吱咚吱咚吱咚吱咚吱咚咚咚咚......<br>
+                            <br>
+                            不要再叫了 叫我什麼姐姐<br>
+                            海K你一拳 你還跟我謝謝<br>
+                            你說 I Love You 要跟我 Long Stay<br>
+                            誰管女神宅男配不配 姐姐<br>
+                            不要再叫了 叫我什麼姐姐<br>
+                            我只是放空 眼神沒有不屑<br>
+                            你說 I Love You 不在乎小幾歲<br>
+                            愛死我電趴你的世界界界界<br>
+                            界界界界界界界界......<br>
+                            姐姐~<br>
+                            Dancing Par趴趴趴趴趴 管他跳歪七扭八<br>
+                            我就是 殺殺殺殺殺 唯舞獨尊的A咖<br>
+                            你就是 XXXXX 沒在怕膽子好大<br>
+                            卡卡的咚吱咚吱咚吱咚吱<br>
+                            跳針跳針跳針叫我姐姐<br>
+                            <br>
+                            咚吱咚吱<br>
+                            咚吱咚吱<br>
+                            跳針跳針<br>
+                            <br>
+                            不要再叫了 叫我什麼姐姐<br>
+                            海K你一拳 你還跟我謝謝<br>
+                            你說 I Love You 要跟我 Long Stay<br>
+                            誰管女神宅男配不配 姐姐<br>
+                            不要再叫了 叫我什麼姐姐<br>
+                            我只是放空 眼神沒有不屑<br>
+                            你說 I Love you 不在乎小幾歲<br>
+                            愛死我電趴你的世界界界界<br>
+                            界界界界界界界界......<br>
+                            姐姐~<br>
+                            Dancing Par趴趴趴趴趴 管他跳歪七扭八<br>
+                            我就是 殺殺殺殺殺 唯舞獨尊的A咖<br>
+                            你就是 XXXXX 沒在怕膽子好大<br>
+                            卡卡的咚吱咚吱咚吱咚吱<br>
+                            跳針跳針跳針叫我姐姐<br>
+                            <br>
+                            姐姐~<br>
+                            Dancing Par趴趴趴趴趴 管他跳歪七扭八<br>
+                            我就是 殺殺殺殺殺 唯舞獨尊的A咖<br>
+                            你就是 XXXXX 沒在怕膽子好大<br>
+                            卡卡的咚吱咚吱咚吱咚吱<br>
+                            跳針跳針跳針叫我姐姐<br>
+                            <br>
+                            卡卡的咚吱咚吱咚吱咚吱 跳針跳針<br>
+                            卡卡的咚吱咚吱咚吱咚吱 跳針跳針<br>
+                            卡卡的咚吱咚吱咚吱咚吱 跳針跳針<br>
+                            卡卡的咚吱咚吱咚吱咚吱<br>
+                            跳針跳針跳針叫我姐姐姐姐姐姐......<br>
+                            叫我姐姐<br>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <td class="result-box myResult3 mx-30 col-4">
+                        <img class="img-fluid" src="https://i.kfs.io/album/global/111193,1v1/fit/500x500.jpg" alt="">
+                    </td>
+                    <td>
+                        <span class="result-box myResult3 myResult3-text mx-50 col-8">
+                            最怕空氣突然安靜 最怕朋友突然的關心<br>
+                            最怕回憶 突然翻滾絞痛著不平息 最怕突然 聽到你的消息<br>
+                            想念如果會有聲音 不願那是悲傷的哭泣<br>
+                            事到如今 終於讓自己屬於我自己 只剩眼淚 還騙不過自己<br>
+                            <br>
+                            突然好想你 你會在哪裡 過得快樂或委屈<br>
+                            突然好想你 突然鋒利的回憶 突然模糊的眼睛<br>
+                            <br>
+                            我們像一首最美麗的歌曲 變成兩部悲傷的電影<br>
+                            為什麼你 帶我走過最難忘的旅行 然後留下 最痛的紀念品<br>
+                            <br>
+                            我們 那麼甜那麼美那麼相信 那麼瘋那麼熱烈的曾經<br>
+                            為何我們還是要奔向各自的幸福和遺憾中老去<br>
+                            <br>
+                            突然好想你 你會在哪裡 過得快樂或委屈<br>
+                            突然好想你 突然鋒利的回憶 突然模糊的眼睛<br>
+                            <br>
+                            最怕空氣突然安靜 最怕朋友突然的關心<br>
+                            最怕回憶 突然翻滾絞痛著不平息 最怕突然 聽到你的消息<br>
+                            <br>
+                            最怕此生 已經決心自己過沒有你 卻又突然 聽到你的消息<br>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- js or jqery -->
+    <script>
+        // 方法一
+        $(document).ready(function () {
+
+            const goBtn1 = $('#goBtn1');
+            const goBtn2 = $('#goBtn2');
+            const goBtn3 = $('#goBtn3');
+            const goBtn = $('.goBtn');
+
+            const mySpin = $('#mySpin');
+            const myResult = $('#myResult');
+            const resultBox = $('.result-box');
+            const tableBox = $('#table-box');
+
+            const colorClass = 'btn-color';
+
+            // console.log('goBtn', goBtn);
+            console.log('mySpin', mySpin);
+            console.log('myResult', myResult);
+            console.log('goBtn', goBtn);
+
+            // jquery hide / show
+            mySpin.hide();
+            // myResult.hide();
+            // tableBox.hide();
+            resultBox.hide();
+
+
+            /* ID 用法 */
+            // goBtn1.click(function (e) {
+            //     resultBox.hide();
+            //     $('.img-fluid').removeClass('rotate');
+            //     goBtn1.removeClass('btn-color');
+            //     goBtn2.removeClass('btn-color');
+            //     goBtn3.removeClass('btn-color');
+            //     $(this).addClass('btn-color');
+            //     // console.log('goBtn ok');
+            //     // console.log($(this).attr('data-val'));
+            //     const val = $(this).attr('data-val');
+            //     console.log(val);
+            //     mySpin.show();
+
+
+            //     // const result = `$(".myResult${val}")`;
+            //     const result = `myResult${val}`;
+            //     // console.log(resultTd);
+
+            //     setTimeout(() => {
+            //         myResult.text('GO~');
+            //         mySpin.hide();
+            //         tableBox.show();
+            //         $('.' + result).show();
+            //         // result.show();
+            //     }, 300);
+
+            //     setTimeout(() => {
+            //         $('.img-fluid').addClass('rotate');
+            //     }, 1500);
+
+            // });
+
+            // goBtn2.click(function (e) {
+            //     resultBox.hide();
+            //     $('.img-fluid').removeClass('rotate');
+            //     goBtn1.removeClass('btn-color');
+            //     goBtn2.removeClass('btn-color');
+            //     goBtn3.removeClass('btn-color');
+            //     $(this).addClass('btn-color');
+            //     // console.log('goBtn ok');
+            //     // console.log($(this).attr('data-val'));
+            //     const val = $(this).attr('data-val');
+            //     console.log(val);
+            //     mySpin.show();
+
+            //     // const result = `$(".myResult${val}")`;
+            //     const result = `myResult${val}`;
+            //     // console.log(resultTd);
+
+            //     setTimeout(() => {
+            //         myResult.text('GO~');
+            //         mySpin.hide();
+            //         tableBox.show();
+            //         $('.' + result).show();
+            //         // result.show();
+            //     }, 300);
+
+            //     setTimeout(() => {
+            //         $('.img-fluid').addClass('rotate');
+            //     }, 1500);
+
+            // });
+
+            // goBtn3.click(function (e) {
+            //     resultBox.hide();
+            //     $('.img-fluid').removeClass('rotate');
+            //     goBtn1.removeClass('btn-color');
+            //     goBtn2.removeClass('btn-color');
+            //     goBtn3.removeClass('btn-color');
+            //     $(this).addClass('btn-color');
+            //     // console.log('goBtn ok');
+            //     // console.log($(this).attr('data-val'));
+            //     const val = $(this).attr('data-val');
+            //     console.log(val);
+            //     mySpin.show();
+
+            //     // const result = `$(".myResult${val}")`;
+            //     const result = `myResult${val}`;
+            //     // console.log(resultTd);
+
+            //     setTimeout(() => {
+            //         myResult.text('GO~');
+            //         mySpin.hide();
+            //         tableBox.show();
+            //         $('.' + result).show();
+            //         // result.show();
+            //     }, 300);
+
+            //     setTimeout(() => {
+            //         $('.img-fluid').addClass('rotate');
+            //     }, 1500);
+
+            // });
+            /* ID 用法 */
+
+            /* CLASS 用法 */
+            goBtn.click(function (e) {
+                resultBox.hide();
+                $('.img-fluid').removeClass('rotate');
+                goBtn.removeClass('btn-color');
+                goBtn.removeClass('btn-color');
+                goBtn.removeClass('btn-color');
+                $(this).addClass('btn-color');
+                // console.log($(this).attr('data-val'));
+                const val = $(this).attr('data-val');
+                console.log(val);
+                mySpin.show();
+
+                setTimeout(() => {
+                    // myResult.text('GO~');
+                    mySpin.hide();
+                    tableBox.show();
+                    $(val).show();
+                }, 300);
+
+                setTimeout(() => {
+                    $('.img-fluid').addClass('rotate');
+                }, 1500);
+
+            });
+            /* CLASS 用法 */
+
+        });
+        // jquery end
+
+    </script>
+</body>
+
+</html>

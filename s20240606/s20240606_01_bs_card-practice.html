@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .card-img-mark:hover {
+            box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+            transition: 0.3s;
+        }
+
+        .box-color {
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .box-shadow {
+            box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 15px;
+            transition: 0.5s;
+        }
+
+        .box {
+            line-height: 50px;
+            width: 60%;
+            margin: 0 auto;
+            padding-top: 70px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".card-body").hover(function () {
+                $(this).addClass('box-color');
+                // $("p").css("background-color", "yellow");
+            }, function () {
+                $(this).removeClass('box-color');
+                // $("p").css("background-color", "pink");
+            });
+            $(".card-mark").hover(function () {
+                $(this).addClass('box-color');
+                $(this).addClass('box-shadow');
+                // $("p").css("background-color", "yellow");
+            }, function () {
+                $(this).removeClass('box-color');
+                $(this).removeClass('box-shadow');
+                // $("p").css("background-color", "pink");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://cdn.cybassets.com/media/W1siZiIsIjkwODAvc2NoZWR1bGUvcGMvYjA4MWJiZmJiOTA5MWE2MjhmOTM5NGJiMjhjYTU0YmQ1MTU5NGVjMTg5Y2ViZDBiNzUxMTUwMjk3ZGE4MDc1MC5qcGVnIl1d.jpeg?sha=f57eac0534182a87"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn.cybassets.com/media/W1siZiIsIjkwODAvc2NoZWR1bGUvcGMvNWYyOTJlN2JiYjJmMGQzNGE4NjY0ZGY3NTc5Mzc0MGQ4NjJlODA2ZjE3MTNjNDk2MTI5MmNhZTNjMmExMGYxNS5qcGVnIl1d.jpeg?sha=36e8e5db2e1ea6ca"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn.cybassets.com/media/W1siZiIsIjkwODAvc2NoZWR1bGUvcGMvZGJkYjU3MDQ5ZjIyMjI1MjIwOGY3MjA1MDg3OTg5YmE3OWEyZTBhM2E4ZTVlNTg4ODBmNzBkZDdlZGRiZGRhYS5qcGVnIl1d.jpeg?sha=c4b741b72d379a6a"
+                        class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <br>
+
+    <div id="container1" class="containter1">
+        <div id="carouselExampleIndicators1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.coolpix.com.tw/image/index_banner/171680674748660600166.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.coolpix.com.tw/image/index_banner/171712539472431000637.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.coolpix.com.tw/image/index_banner/171289196710933900708.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <br>
+
+    <div id="container2" class="containter2">
+        <!-- <div class="col-8"> -->
+        <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-8">
+                            <img src="https://www.coolpix.com.tw/image/index_banner/171680674748660600166.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                Canon PowerShot V10 影音相機及 OCT-R1 眼科光學斷層掃描器 榮獲 2024
+                                年紅點設計大獎肯定。Canon以創新設計獲得高度評價，未來將持續保持創新的原動力，推出更多設計獨特的頂尖產品。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-8">
+                            <img src="https://www.coolpix.com.tw/image/index_banner/171712539472431000637.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                2024年5月3日 — Canon 集團積極邁向淨零碳排之目標，宣布旗下五家印表機生產工廠於 2023
+                                年度所使用的電力，已百分百轉換為可再生能源電力，全面開啟綠能生產，分別包括
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-8">
+                            <img src="https://www.coolpix.com.tw/image/index_banner/171289196710933900708.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                2024年4月22日 — 2024 年 4 月 3
+                                日上午在台灣花蓮外海發生芮氏規模7.2強烈地震，造成東部地區嚴重災情，尤其花蓮受創最嚴重。為表達對受災地區的深切關懷，Canon
+                                集團共
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4 mt-3">
+                <h2>Nikon</h2>
+                <p>D6 單機身</p>
+                <div class="card w-100">
+                    <img class="card-img-top"
+                        src="https://www.coolpix.com.tw/cruis_work/upload_file/shop_eye/159014221943024700931.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">NT$.225,800</h4>
+                        <p class="card-text">「速度」在體育界和新聞攝影領域扮演重要關鍵，全新 Nikon D6
+                            即以最強自動對焦功能，完美捕捉決定性的瞬間；加上多樣化便捷傳輸選項，關鍵畫面只需輕按幾下即可快速傳至新聞編輯中心或社群媒體。
+                            全新開發 105 點全十字 AF 對焦系統
+                            每秒 14 張高速連拍
+                            內建 GPS 全球定位系統
+                        </p>
+                        <a href="https://www.coolpix.com.tw/shop/%E6%95%B8%E4%BD%8D%E5%96%AE%E7%9C%BC%E7%9B%B8%E6%A9%9F/292.html"
+                            class="btn btn-secondary">See More...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mt-3">
+                <h2>Nikon</h2>
+                <p>D850單機身</p>
+                <div class="card w-100">
+                    <img class="card-img-top card-img-mark"
+                        src="https://www.coolpix.com.tw/cruis_work/upload_file/shop_eye/157674590433380400163.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">NT$.79,800</h4>
+                        <p class="card-text">D850 配備出色的 4570 萬有效像素，讓您捕捉到無與倫比的精彩影像。此外，內置的縮時拍攝功能更可讓您以幕幕出色的影像，創作出極致非凡的 8K
+                            UHD 間隔定時短片，重塑影像及影片拍攝的質素和標準。
+                            內建縮時拍攝功能
+                            8K UHD 間隔定時短片
+                            4570 萬有效像素</p>
+                        <a href="https://www.coolpix.com.tw/shop/%E6%95%B8%E4%BD%8D%E5%96%AE%E7%9C%BC%E7%9B%B8%E6%A9%9F/218.html"
+                            class="btn btn-secondary">See More...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mt-3">
+                <h2>Nikon</h2>
+                <p>D780 單機身</p>
+                <div class="card card-mark w-100">
+                    <img class="card-img-top"
+                        src="https://www.coolpix.com.tw/cruis_work/upload_file/shop_eye/157949104642743600156.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">NT$.70,900</h4>
+                        <p class="card-text">全新 D780 將對焦 (AF) 系統演算法升級至 D5 的旗艦等級，並且同時搭載最新 273 點混合式對焦，在低光源環境下仍可達到高 AF
+                            精確度，拍攝影像清晰極致、精準無延誤。此外，NIKKOR 可換式 F 接環鏡頭豐富齊全，將是 D780 相機的最佳拍檔；而相機電池壽命再升級，更集聚全面高效能於輕巧機身之中。
+                            最新混合 AF 自動對焦系統
+                            支援 LiveView 眼控對焦
+                            支援微光對焦（低光源對焦極限值 -7.0 EV）
+                        </p>
+                        <a href="https://www.coolpix.com.tw/shop/%E6%95%B8%E4%BD%8D%E5%96%AE%E7%9C%BC%E7%9B%B8%E6%A9%9F/290.html"
+                            class="btn btn-secondary">See More...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mt-3">
+                <h2>Nikon</h2>
+                <p>D780 KIT(AF-S NIKKOR 24-120mm f/4G ED VR)</p>
+                <div class="card w-100">
+                    <img class="card-img-top"
+                        src="https://www.coolpix.com.tw/cruis_work/upload_file/shop_eye/157889486386975800850.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">NT$.89,900</h4>
+                        <p class="card-text">D780加上AF-S NIKKOR 24-120mm f/4G ED VR
+                            兩者配搭天衣無縫，不論是拍攝廣角遼遠的風景、以至細膩親暱的人像。在改良版光學元件、奈米結晶塗層與超低色散 (ED) 鏡片的加持下，每幅影像都將呈現鮮明對比與豐富色彩，效果非凡無雙！
+                            最新混合 AF 自動對焦系統
+                            支援 LiveView 眼控對焦
+                            支援微光對焦（低光源對焦極限值 -7.0 EV）</p>
+                        <a href="#" class="btn btn-secondary">See More...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mt-3">
+                <h2>Nikon</h2>
+                <p> Z9 單機身 </p>
+                <div class="card w-100">
+                    <img class="card-img-top card-img-mark"
+                        src="https://www.coolpix.com.tw/cruis_work/upload_file/shop_eye/163712175030520200798.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">NT$.179,000</h4>
+                        <p class="card-text">Z 9 全面提升拍攝能力，讓專業攝影師輕鬆捕捉靜態影像及影片，其配備了 Nikon 首款 4
+                            軸垂直及水平翻揭式螢幕，配搭一體式直度手柄，即使面對最惡劣條件，拍攝依然舒適。此外，Z 9 的自動對焦 (AF)
+                            系統功能強大，可同步偵測的主體類型，真實實時觀景器更不受黑屏影響；相機可內錄長達 125 分鐘 8K 影片，以上一切皆令 Z 9 成為最實用的外景拍攝相機。</p>
+                        <a href="https://www.coolpix.com.tw/shop/%E7%84%A1%E5%8F%8D%E5%85%89%E9%8F%A1%E7%9B%B8%E6%A9%9F/350.html"
+                            class="btn btn-secondary">See More...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mt-3">
+                <h2>Nikon</h2>
+                <p>Z FC 單機身 (黑)</p>
+                <div class="card card-mark w-100">
+                    <img class="card-img-top"
+                        src="https://www.coolpix.com.tw/cruis_work/upload_file/shop_eye/167159579395612800957.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">NTS.33,000</h4>
+                        <p class="card-text">結合傳統設計與當今技術，全新 Nikon Z fc 無反光鏡相機，靈感源自於經典的 Nikon FM2 底片機，是一台集優雅、輕巧於一身的 DX
+                            時尚相機。
+                            機身僅 445 克
+                            4K 超高畫質短片錄製
+                            20.9MP 感測器</p>
+                        <a href="#" class="btn btn-secondary">See More...</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- js or jqery -->
+    <script>
+        $(document).ready(function () {
+
+        });
+        // jquery end
+
+    </script>
+</body>
+
+</html>

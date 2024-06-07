@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .box {
+            position: relative;
+            /* width: 300px; */
+            height: 50vh;
+            background-color: lightblue;
+        }
+
+        .myButton {
+            height: 50vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-2 myButton">
+                <div class="d-grid gap-2 h-100">
+                    <button class="btn btn-danger" type="button" id="animateBtn">animateBtn</button>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="box text-white">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate veniam exercitationem adipisci
+                    possimus ducimus a sit quia nulla reprehenderit, voluptate qui voluptas maiores ipsa hic amet
+                    consequuntur accusamus doloremque quis?
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- js or jqery -->
+    <script>
+        $(document).ready(function () {
+            const animateBtn = $('#animateBtn');
+            const box = $('.box');
+            animateBtn.click(function () {
+                console.log('animateBtn ok');
+                // box.animate({left: '+=50px'});
+
+                box.animate({ width: 'toggle' }, 500);
+
+            });
+
+        });
+        // jquery end
+
+    </script>
+</body>
+
+</html>

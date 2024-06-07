@@ -405,15 +405,15 @@
                 goBtn.removeClass('btn-color');
                 $(this).addClass('btn-color');
                 // console.log($(this).attr('data-val'));
-                const val = $(this).attr('data-val');
-                console.log(val);
+                const class_name = $(this).attr('data-val');
+                console.log(class_name);
                 mySpin.show();
 
                 setTimeout(() => {
                     // myResult.text('GO~');
                     mySpin.hide();
                     tableBox.show();
-                    $(val).show();
+                    $(class_name).show();
                 }, 300);
 
                 setTimeout(() => {

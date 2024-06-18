@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h2>Bordered Table</h2>
+
+        <div class="text-end">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
+                add
+            </button>
+        </div>
+
+        <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>Opt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Amy</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                    <td>
+                        <button data-id="1" type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#myModalEdit">
+                            Edit
+                        </button>
+                        <button type="button" class="btn btn-danger">Del</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                    <td>
+                        <!-- <button type="button" class="btn btn-warning">Edit</button> -->
+                        <button data-id="2" type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#myModalEdit">
+                            Edit
+                        </button>
+                        <button type="button" class="btn btn-danger">Del</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cat</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                    <td>
+                        <button data-id="3" type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#myModalEdit">
+                            Edit
+                        </button>
+                        <button type="button" class="btn btn-danger delBtn">Del</button>
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <!-- The Modal Add -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <label for="" class="form-check-label">Name</label>
+                                <input type="text" name="" id="" class="form-control">
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="" class="form-check-label">Mobile</label>
+                                <input type="text" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--  -->
+    <div class="container mt-3">
+        <h3>Modal Example</h3>
+        <p>Click on the button to open the modal.</p>
+
+
+    </div>
+
+    <!-- The Modal Edit-->
+    <div class="modal" id="myModalEdit">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- js or jqery -->
+    <script>
+        $(document).ready(function () {
+            const delBtn = $('.delBtn');
+            delBtn.click(function () {
+                // if(!confirm('Del ?')){
+                //     return false;
+                // }
+
+                if (confirm("del?")) {
+                    console.log('刪除成功');
+                } else {
+                    console.log('取消刪除');
+                    return false;
+                }
+                console.log('btn ok');
+            });
+        });
+        // jquery end
+
+    </script>
+</body>
+
+</html>

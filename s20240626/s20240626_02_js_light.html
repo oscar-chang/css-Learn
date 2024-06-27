@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .box {
+            width: 100%;
+            height: 30vh;
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <button id="redBtn" type="button" class="btn btn-danger">red</button>
+            </div>
+            <div class="col">
+                <button id="greenBtn" type="button" class="btn btn-success">green</button>
+            </div>
+            <div class="col">
+                <button id="blueBtn" type="button" class="btn btn-primary">blue</button>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <!-- output -->
+                <div class="box" id="resultBox">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1.綁定 bind
+        const redBtn = document.getElementById('redBtn');
+        const greenBtn = document.getElementById('greenBtn');
+        const blueBtn = document.getElementById('blueBtn');
+        const resultBox = document.getElementById('resultBox');
+
+
+        // 2.事件 event 
+        redBtn.addEventListener('click', function () {
+            // resultBox.style.backgroundColor = "red";
+            resultBox.setAttribute('class', 'box bg-danger');
+        });
+
+        greenBtn.addEventListener('click', function () {
+            // resultBox.style.backgroundColor = "green";
+            resultBox.setAttribute('class', 'box bg-success');
+        });
+
+        blueBtn.addEventListener('click', function () {
+            // resultBox.style.backgroundColor = "blue";
+            resultBox.setAttribute('class', 'box bg-primary');
+        });
+    </script>
+</body>
+
+</html>

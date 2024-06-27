@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        td:hover {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>99乘法表</h2>
+        <table class="table table-bordered">
+            <tbody id="tr">
+                <!-- <div id="tr" class="container"> -->
+                <!-- <td class="td"></td> -->
+                <!-- </div> -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // for
+        for (let i = 1; i <= 9; i++) {
+            let rowText = '';
+            for (let j = 1; j <= 9; j++) {
+                // console.log('i', i);
+                // console.log('j', j);
+                let tmpText = `${i} * ${j} = ${i * j} `;
+                // console.log( tmpText);
+                rowText = rowText + '<td class="col">' + tmpText + '</td>';
+            }
+            console.log('rowText', rowText);
+            document.getElementById('tr').innerHTML += '<tr class="row">' + rowText + '</tr>';
+            // document.getElementById('tr').innerHTML = document.getElementById('tr').innerHTML+ text;
+        }
+
+        // let result99 = '';
+        // for (let i = 1; i <= 9; i++) {
+        //     let tmpText = '';
+        //     for (let j = 1; j <= 9; j++) {
+        //         let iStr = i.toString().padStart(2, '0');
+        //         let jStr = j.toString().padStart(2, '0');
+        //         let ijStr = (i * j).toString().padStart(2, '0');
+        //         console.log('i', i);
+        //         console.log('typeof i', typeof (i));
+        //         console.log('iStr', iStr);
+        //         console.log('typeof iStr', typeof (iStr));
+        //         console.log('iStr', iStr);
+        //         tmpText += `<td>  ${iStr} * ${jStr} = ${ijStr} </td>`;
+        //         console.log('tmpText', tmpText);
+        //     }
+        //     result99 = result99 + '<tr>' + tmpText + '</tr>';
+        // }
+
+        // myP.innerHTML = "<table>" + result99 + "</table>";
+    </script>
+</body>
+
+</html>

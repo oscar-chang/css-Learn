@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>2024 iTaiwan 攝影大賽</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script> -->
+    <script>
+        // lazyload();
+        // $('img.lazy').lazyload({
+        //     effect: 'fadeIn'
+        // });
+    </script>
+    <style>
+        .container-h {
+            min-height: 90vh;
+        }
+
+        .container-h-a {
+            min-height: 50vh;
+        }
+
+        .container-card {
+            padding-top: 15vh;
+        }
+
+        .container-card-a {
+            padding-top: 10vh;
+        }
+
+        iframe {
+            width: 95%;
+            height: 50vh;
+        }
+
+        .contact {
+            margin-bottom: 3.5rem;
+            letter-spacing: .2em;
+        }
+
+        .group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中對齊子元素 */
+            align-items: center;
+            /* 垂直居中對齊子元素 */
+            flex-wrap: wrap;
+            /* 使子元素換行（如果一行放不下） */
+            margin-bottom: 2rem;
+        }
+
+        .group-item {
+            margin: 10px;
+            /* 可選：為每個項添加外邊距 */
+            padding: 12px 17px;
+            /* 可選：為每個項添加內邊距 */
+            background-color: #f0f0f0;
+            /* 可選：為每個項添加背景顏色 */
+            border: 1px solid #ccc;
+            /* 可選：為每個項添加邊框 */
+            border-radius: 5px;
+            /* 可選：為每個項添加圓角 */
+            font-size: 1.4em;
+            transition: .3s ease-in-out;
+            /* 淡入效果 */
+        }
+
+        .landscape,
+        .portrait {
+            display: none;
+            /* transition: 10s ease-in-out; */
+            /* 淡入效果 */
+        }
+
+        .show {
+            display: block !important;
+            opacity: 1;
+            /* transition: 10s ease-in-out; */
+            /* 淡入效果 */
+        }
+
+        .group-item:hover {
+            cursor: pointer;
+        }
+
+        .group-item-hover {
+            background-color: black;
+            color: white;
+            transition: .2s;
+        }
+
+        .list-group {
+            color: lightgray;
+            border-style: double;
+            border-width: thick;
+        }
+
+        .list-group-item:first-child {
+            font-weight: 900;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 10%;
+            right: 5%;
+            line-height: 4rem;
+            width: 4rem;
+            height: 4rem;
+            background: black;
+            color: white;
+            border-radius: 50%;
+        }
+
+        .js-back-to-top {
+            text-decoration: none;
+            color: white;
+        }
+
+        .card-text {
+            width: 80%;
+            margin: 2rem auto;
+            line-height: 2em;
+        }
+
+        .hovereffect {
+            width: 100%;
+            height: 100%;
+            float: left;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            cursor: default;
+        }
+
+        .hovereffect .overlay {
+            position: absolute;
+            overflow: hidden;
+            width: 80%;
+            height: 80%;
+            left: 10%;
+            top: 10%;
+            border-bottom: 1px solid #FFF;
+            border-top: 1px solid #FFF;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: scale(0, 1);
+            -ms-transform: scale(0, 1);
+            transform: scale(0, 1);
+        }
+
+        .hovereffect:hover .overlay {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .hovereffect img {
+            display: block;
+            position: relative;
+            -webkit-transition: all 0.35s;
+            transition: all 0.35s;
+        }
+
+        .hovereffect:hover img {
+            filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+            filter: brightness(0.6);
+            -webkit-filter: brightness(0.6);
+        }
+
+        .hovereffect h2 {
+            font-family: sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.4em;
+            /* text-transform: uppercase; */
+            text-align: center;
+            position: relative;
+            font-size: 18px;
+            background-color: transparent;
+            color: #FFF;
+            padding: 8.2em 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+
+        .hovereffect a,
+        .hovereffect p {
+            color: #FFF;
+            padding: 1em 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+        }
+
+        .hovereffect:hover a,
+        .hovereffect:hover p,
+        .hovereffect:hover h2 {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .position-relative {
+            position: relative;
+        }
+
+        .overlay-1 {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            width: 70%;
+            height: 100%;
+            background-color: rgba(141, 141, 141, 0.3);
+            /* 半透明白色背景 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.25rem;
+            /* 与 img 的 rounded 类对应 */
+        }
+
+        .watermark {
+            color: white;
+            font-size: 2.2rem;
+            text-align: center;
+            font-weight: lighter;
+            font-family: fantasy;
+            letter-spacing: .2em;
+        }
+
+        .logo-title {
+            text-shadow: 0.05em 0.05em 0.1em rgb(126, 125, 125);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container container-fluid d-flex justify-content-center mt-3 mb-2">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="./s20240625_01_bs_practice.html">
+                    <h1 class="mt-3 logo-title">IPAA AWARD</h1>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="./s20240625_01_bs_practice.html#link1">活動專區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./s20240625_01_bs_practice.html#link2">宣傳專區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./s20240625_01_bs_practice.html#link3">投票專區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./s20240625_01_bs_practice.html#link4">宣傳說明</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./s20240625_01_bs_practice.html#link5">主辦單位</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container-fluid flex-row-reverse me-5">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./s20240607_02_bs_login.html">前往登入</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- nav end -->
+
+    <!-- container1 -->
+
+    <div id="link1"></div>
+    <div class="container-carousel">
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active"><a
+                        href="https://culture.skm.com.tw/ActEvent/Cweb/ActiveContent?MenuUUID=3952cfb0-c05d-4801-982d-d47bb4a7e298&ActUUID=807a24b9-5380-41f0-96e2-b98636e0267e">
+                        <img src="https://mculture.skm.com.tw/CultureFiles/20240409/c876110ef3514a12992bc119568f7fac.jpg"
+                            alt="Los Angeles" class="d-block" style="width:100%"></a>
+                </div>
+                <div class="carousel-item"><a
+                        href="https://culture.skm.com.tw/actevent/?ActUUID=807a24b9-5380-41f0-96e2-b98636e0267e">
+                        <img src="http://mculture.skm.com.tw/CultureFiles/20240503/8623ceec91ba41259ad39f94d6bf5fc3.jpg"
+                            alt="Chicago" class="d-block" style="width:100%"></a>
+                </div>
+                <div class="carousel-item"><a
+                        href="https://culture.skm.com.tw/ActEvent/Cweb/ActiveContent?MenuUUID=97d8477e-b1ad-4942-a7c7-dc981b112c0f&ActUUID=807a24b9-5380-41f0-96e2-b98636e0267e">
+                        <img src="http://mculture.skm.com.tw/CultureFiles/20230614/38fe419bbb8c4ab09a7a66d996f1cb7f.jpg"
+                            alt="New York" class="d-block" style="width:100%"></a>
+                </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+        <!-- <div class="row">
+            <div class="col">
+
+            </div>
+        </div> -->
+    </div>
+
+    <!-- container1 end -->
+
+    <!-- container2 -->
+    <div id="link2"></div>
+    <div class="container-fluid mt-3 container-h-a container-card-a">
+        <h2 class="mb-5" style="text-align: center;">拍攝主題</h2>
+        <div class="row h-100 align-items-center">
+            <div class="col-12 col-lg-6 mt-3 mb-3 text-center" style="position: relative;">
+                <img class="rounded img-fluid lazy" style="width: 70%;" src="images/portrait2.jpg" alt="" srcset="">
+                <div class="overlay-1">
+                    <div class="watermark">Portrait</div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mt-3 mb-3 text-center" style="position: relative;">
+                <img class="rounded img-fluid lazy" style="width: 70%;" src="images/landscape2.jpg" alt="" srcset="">
+                <div class="overlay-1">
+                    <div class="watermark">Landscape</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- container2 end-->
+
+    <!-- container3 -->
+    <div id="link3"></div>
+    <div class="container-fluid container-h mt-3 container-card-a">
+        <div class="row justify-content-around align-items-center">
+            <h2 class="mb-5" style="text-align: center;">投票專區</h2>
+            <div class="group">
+                <div data-group="portrait" class="group-item group-item-hover">人像</div>
+                <div data-group="landscape" class="group-item">風景</div>
+            </div>
+            <!-- <span class="vote-box portrait"> -->
+            <div class="col-12 col-lg-4 text-center vote-box portrait">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/p1.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：John</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">凝視如深潭，目光中蘊含無限情感。每一次凝視都像是一次心靈的交流，無聲中傳達出最深的理解與關懷。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Portrait-John">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-12 col-lg-4 text-center vote-box portrait">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/p2.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：Jannie</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">童心如春日暖陽，純真無瑕。無論世事多麼複雜，仍能保持天真爛漫的笑容，感受世界的美好與純粹。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Portrait-Jannie">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-12 col-lg-4 text-center vote-box portrait">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/p3.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：David</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">期盼如晨曦初現，帶來無限希望。每一天都在期待美好的未來，每一刻都充滿對幸福與成功的渴望。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Portrait-David">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-12 col-lg-4 text-center vote-box portrait">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/p4.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：Peter</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">心思縝密如絲，縫補著生活的點滴。每一個細節都經過深思熟慮，每一個決定都蘊含著無盡的智慧與情感。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Portrait-Peter">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-12 col-lg-4 text-center vote-box portrait">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/p5.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：Alice</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">看透的心如明鏡般清澈，無論世事如何變幻，都能平靜面對。不再迷茫，不再執著，找到真正的自己與內心的平和。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Portrait-Alice">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-12 col-lg-4 text-center vote-box portrait">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/p6.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：Janet</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">沉重的心如鉛塊壓胸，無法呼吸。每一步都艱難，每一刻都痛苦，無法擺脫心中的負擔。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Portrait-Janet">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+            </span>
+            <!-- <span class="vote-box landscape" style=""> -->
+            <div class="col-12 col-lg-4 text-center vote-box landscape" style="">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/l1.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：Joson</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">森林瀑布如銀龍飛瀉，水聲如雷，激盪著萬物。陽光穿透樹葉，映射出七彩虹霓，讓人感受到自然的壯麗與生命的活力。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Landscape-John">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-12 col-lg-4 text-center vote-box landscape" style="">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/l2.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：Jannie</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">草原藍天廣闊無垠，白雲悠悠飄過，草兒隨風起伏。這片寧靜的大地，讓人心境如天空般純淨，感受到自由與平和。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Landscape-Jannie">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-12 col-lg-4 text-center vote-box landscape" style="">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/l3.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：David</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">紅葉樹木如火焰般燦爛，秋風輕拂，葉片飄落。這片絢麗的景象，不禁讓人感受到季節的變遷與生命的無盡輪迴。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Landscape-David">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-12 col-lg-4 text-center vote-box landscape" style="">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/l4.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：Peter</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">夕陽西下，火燒雲映紅海邊，天空與海水交融，染成一片金紅色。這壯麗的景象讓人陶醉，感受到大自然的無限魅力。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Landscape-Peter">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-12 col-lg-4 text-center vote-box landscape" style="">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/l5.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：Alice</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">大壁岩石屹立如鐵，經歷風霜雨雪依然堅固。其雄偉壯觀的姿態，讓人敬畏自然的力量，感受到歷史的厚重與不朽。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Landscape-Alice">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-12 col-lg-4 text-center vote-box landscape" style="">
+                <!-- <h2>Card Image</h2> -->
+                <!-- <p>Image at the top (card-img-top):</p> -->
+                <div class="card mx-auto" style="">
+                    <div class="hovereffect">
+                        <img class="card-img-top hover-shadow w-100 lazy" src="images/l6.jpg" alt="Card image"
+                            style="width:100%">
+                        <div class="overlay">
+                            <h2>Name：Janet</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">深夜極光在漆黑的天空中舞動，色彩斑斕如夢似幻。這絢爛的光芒照亮了寂靜的夜空，讓人感受到宇宙的神秘與壯麗。
+                        </p>
+                        <button class="btn btn-secondary vote" data-name="Landscape-Janet">投票</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+            </span>
+        </div>
+    </div>
+    <!-- container3 end-->
+
+    <!-- container4 youtube -->
+    <div id="link4"></div>
+    <div class="container container-h-a container-card-a">
+        <div class="row text-center align-items-center" style=""><!--width: 80%;margin: 0 auto;-->
+            <div class="col-12 col-lg-6">
+                <img src="./images/portrait.jpg" alt="Card image" class="img-fluid lazy">
+                <!-- <iframe class="rounded" src="https://www.youtube.com/embed/L0MK7qz13bU?si=3LOMg_GapXDMtxS2"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+            </div>
+            <div class="col-12 col-lg-6 text-start">
+                <div class="card-body">
+                    <h5 class="card-title fs-2 mt-3 mb-3 ms-5 me-5">肖像獎</h5>
+                    <p class="card-text fs-6 lh-lg ms-5 me-5">
+                        Head On 肖像獎（成立於 2004 年）是一項享有盛譽的肖像攝影比賽，是一年一度的 Head On 攝影節的核心。<br>
+                        它為尋求突破肖像畫界限的新興和成熟藝術家提供了一個平台。<br>
+                        我們以匿名評審流程而聞名，旨在尋找重新定義傳統肖像的創新方法。<br>
+                        競賽的獲勝者和決賽入圍者透過免費的公共展覽、出版物和新聞報道獲得大量曝光。<br>
+                        該圖像必須體現或反映一個人或一群人的本質，並且必須由申請人拍攝。<br>
+                        集體肖像、自畫像和拼貼畫均可接受。我們鼓勵所有的攝影風格和對肖像攝影的詮釋。<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container container-h-a container-card-a">
+        <div class="row text-center align-items-center" style=""><!--width: 80%;margin: 0 auto;-->
+            <div class="col-12 col-lg-6">
+                <img src="./images/landscape.jpg" alt="Card image" class="img-fluid lazy">
+                <!-- <iframe class="rounded" src="https://www.youtube.com/embed/L0MK7qz13bU?si=3LOMg_GapXDMtxS2"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+            </div>
+            <div class="col-12 col-lg-6 text-start">
+                <div class="card-body">
+                    <h5 class="card-title fs-2 mt-3 mb-3 ms-5 me-5">景觀獎</h5>
+                    <p class="card-text fs-6 lh-lg ms-5 me-5">
+                        我們的「景觀」方法非常廣泛，包括自然環境（陸地或海洋）、城市或工業環境的「大遠景」影像。<br>
+                        它可能包括人，但這些應該是“附帶的”而不是主要主題。<br>
+                        我們鼓勵所有的攝影風格和對「風景」的詮釋。<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- container4 end-->
+
+    <!-- container5 google map & form-->
+    <div id="link5"></div>
+    <div class="container container-h container-card">
+        <div class="row" style=""><!--width: 80%;margin: 0 auto;-->
+            <div class="col-12 col-lg-8 mt-3 mb-3">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.548955206573!2d121.52310870000001!3d25.049376600000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96f07526ea3%3A0xbfbe8b5d48692e8b!2zMTA0NDLlj7DljJfluILkuK3lsbHljYDplbflronmnbHot6_kuIDmrrUxNuiZnzTmqJM!5e0!3m2!1szh-TW!2stw!4v1719297596160!5m2!1szh-TW!2stw"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-12 col-lg-4 mt-3 mb-3">
+                <div class="contact" style="">
+                    <ul class="list-group">
+                        <li class="list-group-item">Oscar 攝影協會</li>
+                        <li class="list-group-item">Phone : 0919888088</li>
+                        <li class="list-group-item">Adress : 台北市中山區長安東路一段16號</li>
+                        <li class="list-group-item">Line : oscar_photography</li>
+                    </ul>
+                </div>
+                <h2>聯繫我們：</h2>
+                <form id="send-contact" action="s20240625_01_bs_practice.html" method="post">
+                    <div class="mb-3 mt-3">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mail">E-mail:</label>
+                        <input type="text" class="form-control" id="mail" placeholder="Enter E-mail" name="mail">
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <!-- <button class="btn btn-dark" type="button">送出</button> -->
+                        <button class="btn btn-dark" type="submit">送出</button>
+                    </div>
+                </form>
+            </div>
+            <div class="scroll-top hide-small">
+                <a href="#" class="js-back-to-top">
+                    <span class="fa fa-angle-up"></span>
+                    TOP▲
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- container5 end-->
+
+    <!-- container6 form -->
+
+    <!-- container6 end-->
+
+    <!-- footer -->
+    <div class="container-fluid mt-5 mb-5">
+        <div class="row">
+            <div class="col text-center">
+                Copyright © 2024 Apple Inc. All rights reserved.
+            </div>
+        </div>
+    </div>
+    <!-- footer end-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- js or jqery -->
+    <script>
+        $(document).ready(function () {
+            $('.portrait').addClass('show');
+            $('.vote').click(function () {
+                let msg = '您已投' + $(this).data("name") + '完畢，請於明日在投票';
+                alert(msg);
+                // alert('投票 OK');
+            });
+
+            $('.group-item').click(function () {
+                // alert('hover');
+                $('.group-item').removeClass('group-item-hover');
+                $(this).addClass('group-item-hover');
+                let group = $(this).data('group');
+                // alert(group);
+                // $('.vote-box').hide();
+                $('.vote-box').removeClass('show');
+                setTimeout(function () {
+                    $('.' + group).addClass('show');
+                }, 100); // 100毫秒 = 0.1秒
+            });
+
+            $("#send-contact").submit(function () {
+                // window.location.href = 's20240625_01_bs_practice.html';
+                alert("已送出，我們將會盡快與您聯繫！");
+
+            });
+        });
+
+        // jquery end
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            /* font-family: "open sans", HelveticaNeue-Light, helvetica neue light, helvetica neue, Arial, "Noto Sans TC", "LiHei Pro", "Microsoft JhengHei", "微軟正黑體", sans-serif; */
+            font-family: "open sans", Arial, "Noto Sans TC", "LiHei Pro", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+        }
+
+        .camera-img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .align-middle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .row-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-right: 3rem;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+        }
+
+        #calculate {
+            cursor: pointer;
+        }
+
+        input {
+            width: 70%;
+            text-align: center;
+            margin: 15px;
+        }
+
+        .tip {
+            letter-spacing: 0.2em;
+        }
+
+        .title {
+            font-family: fantasy;
+            letter-spacing: 0.2em;
+            font-size: 2.8em;
+            border-style: double;
+            border-width: 20px;
+            border-radius: 0;
+        }
+
+        .control {
+            display: flex;
+        }
+
+        .control-btn {
+            border-style: solid;
+            cursor: pointer;
+            border-width: 3px;
+            font-weight: 900;
+            width: 24%;
+            text-align: center;
+        }
+
+        .td-title {
+            font-size: 1.3em;
+        }
+
+        hr {
+            border-width: thin;
+            color: black;
+            background-color: black;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center mt-5 text-white bg-dark title p-5">Camera SHOP</h1>
+        <h5 class="text-danger m-3 text-center">
+            <marquee>※滿10萬打七折活動周年慶</marquee>
+        </h5>
+
+        <!-- 商品LIST -->
+        <div class="row m-5">
+            <div class="col-2 text-center td-title" style="color: white;">照片</div>
+            <div class="col-2 text-left td-title"><strong>品名</strong></div>
+            <div class="col text-end me-5 td-title"><strong>金額</strong></div>
+            <div class="col text-end me-5 td-title"><strong>庫存</strong></div>
+            <div class="col-3 text-center td-title"><strong>購買數量</strong></div>
+            <div class="col-2 text-center td-title" style="color: white;">小計</div>
+            <div class="col"></div>
+        </div>
+        <div class="row m-3">
+            <div class="col-2"><img class="camera-img"
+                    src="https://eshop.fayaque.com.tw/wp-content/uploads/2021/07/Canon-RF-400mm-F2.8-L-IS-USM-%E4%B8%BB%E5%9C%96-300x300.png"
+                    alt=""></div>
+            <div class="col-2">Canon 400mm F2.8</div>
+            <div class="col text-end price" data-price="354000">$354,000</div>
+            <div class="col text-end stock me-5" data-stock="30">30</div>
+            <div class="col-3 text-center control">
+                <div class="control-btn text-white bg-dark m-3 p-2 reduce">-</div><input type="number" class="quantity"
+                    name="" id="" value="0" min="0">
+                <div class="control-btn text-white bg-dark m-3 p-2 plus">+</div>
+            </div>
+            <div class="col-2">小計: NT$ <span class="s_price">0</span></div>
+            <div class="col"><span class="msg text-danger"></span></div>
+        </div>
+        <div class="row m-3">
+            <div class="col-2"><img class="camera-img"
+                    src="https://eshop.fayaque.com.tw/wp-content/uploads/2021/03/Canon-RF100-500mm-F4.5-7.1L-IS-300x300.jpg"
+                    alt=""></div>
+            <div class="col-2">Canon 100-500mm F4.5-7.1</div>
+            <div class="col text-end price" data-price="79900">$79,900</div>
+            <div class="col text-end stock me-5" data-stock="30">30</div>
+            <div class="col-3 text-center control">
+                <div class="control-btn text-white bg-dark m-3 p-2 reduce">-</div><input type="number" class="quantity"
+                    name="" id="" value="0" min="0">
+                <div class="control-btn text-white bg-dark m-3 p-2 plus">+</div>
+            </div>
+            <div class="col-2">小計: NT$ <span class="s_price">0</span></div>
+            <div class="col"><span class="msg text-danger"></span></div>
+        </div>
+        <div class="row m-3">
+            <div class="col-2"><img class="camera-img"
+                    src="https://eshop.fayaque.com.tw/wp-content/uploads/2020/04/FUJIFILM-XF-100-400mm-F4.5-5.6-RLM--300x300.jpg"
+                    alt=""></div>
+            <div class="col-2">FUJIFILM 100-400mm F4.5-5.6</div>
+            <div class="col text-end price" data-price="62000">$62,000</div>
+            <div class="col text-end stock me-5" data-stock="30">30</div>
+            <div class="col-3 text-center control">
+                <div class="control-btn text-white bg-dark m-3 p-2 reduce">-</div><input type="number" class="quantity"
+                    name="" id="" value="0" min="0">
+                <div class="control-btn text-white bg-dark m-3 p-2 plus">+</div>
+            </div>
+            <div class="col-2">小計: NT$ <span class="s_price">0</span></div>
+            <div class="col"><span class="msg text-danger"></span></div>
+        </div>
+
+        <div class="row m-3">
+            <div class="col-2"><img class="camera-img"
+                    src="https://eshop.fayaque.com.tw/wp-content/uploads/2021/05/SonyFE200-300x300.jpg" alt=""></div>
+            <div class="col-2">SONY 200-600mm F5.6-6.3</div>
+            <div class="col text-end price" data-price="55980">$55,980</div>
+            <div class="col text-end stock me-5" data-stock="30">30</div>
+            <div class="col-3 text-center control">
+                <div class="control-btn text-white bg-dark m-3 p-2 reduce">-</div><input type="number" class="quantity"
+                    name="" id="" value="0" min="0">
+                <div class="control-btn text-white bg-dark m-3 p-2 plus">+</div>
+            </div>
+            <div class="col-2">小計: NT$ <span class="s_price">0</span></div>
+            <div class="col"><span class="msg text-danger"></span></div>
+        </div>
+        <div class="row m-3">
+            <div class="col-2"><img class="camera-img"
+                    src="https://eshop.fayaque.com.tw/wp-content/uploads/2021/05/Sony100-400-300x300.jpg" alt=""></div>
+            <div class="col-2">SONY 100-400mm</div>
+            <div class="col text-end price" data-price="72980">$72,980</div>
+            <div class="col text-end stock me-5" data-stock="30">30</div>
+            <div class="col-3 text-center control">
+                <div class="control-btn text-white bg-dark m-3 p-2 reduce">-</div><input type="number" class="quantity"
+                    name="" id="" value="0" min="0">
+                <div class="control-btn text-white bg-dark m-3 p-2 plus">+</div>
+            </div>
+            <div class="col-2">小計: NT$ <span class="s_price">0</span></div>
+            <div class="col"><span class="msg text-danger"></span></div>
+        </div>
+        <!-- 商品LIST -->
+
+
+        <div class="row m-5">
+            <div class="col text-end">折扣前金額：NT$ <span id="subtotal">0</span></div>
+        </div>
+        <div class="row m-5 discount" style="display: none;">
+            <div class="col text-end text-danger"><span id="dis-msg">★已達滿額★ </span>優惠折扣金額：NT$ <span
+                    id="discount">0</span></div>
+        </div>
+
+        <div class="row m-5">
+            <div class="col text-end" id="calculate"><strong>總金額：NT$ <span>0</span></strong></div>
+        </div>
+        <hr>
+        <hr>
+
+        <div class="row mt-5 mb-5">
+            <div class="col-6 text-center"><a href="https://www.youtube.com/embed/JyWDRdlzDj8"><img
+                        src="https://img.youtube.com/vi/JyWDRdlzDj8/hqdefault.jpg" alt=""></a></div>
+            <div class="col-6 text-center"><a href="https://www.youtube.com/embed/fhUmQQBEgRM"><img
+                        src="https://img.youtube.com/vi/fhUmQQBEgRM/hqdefault.jpg" alt=""></a></div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
+                <h3 class="bg-dark text-white text-center p-3 buy-tip">退換貨須知</h3>
+                <div class="tip">
+                    <ul class="mt-4">
+                        <li class="m-2">七日鑑賞期指的是猶豫期，而非試用期，拆封後即視為已使用。</li>
+                        <li class="m-2">退換貨商品必須是全新商品，商品與盒裝外觀不得有刮傷、破損、受潮、塗寫文字，且必須保有相關配件（保護袋、配件包裝、保麗龍、贈品、所附文件⋯等）之完整性。</li>
+                        <li class="m-2">鑑賞期內請保留原「運送外箱」，勿讓物流商或貨運公司收走，以便退換貨返還時保護商品使用。</li>
+                        <li class="m-2">若有退貨要求，商品有使用痕跡，且無法還原的情形，需額外收取商品復原等費用，不受無條件退貨之規範限制。</li>
+                        <li class="m-2">商品為耳機類、攸關衛生、清潔用品類一律不接受試用，經拆封後恐有使用的疑慮，請先確認購買後再行拆封，避免產生爭議。</li>
+                        <li class="m-2">訂單正式辦理退款時，銀行退款將會開始作業，實際退款入帳將視各家銀行處理時間為主。</li>
+                        <li class="m-2">再次提醒您：退貨時請保持商品外包裝、附件、贈品及所有內容文件的完整，本公司有權拒絕接受退貨的申請。</li>
+                        <li class="m-2">如收取商品後七日內有退貨需求，請您登入會員中心後至「訂單與配送進度」，於該筆訂單留言處留言，將有專人回覆您。</li>
+                        <li class="m-2">您提出退貨申請後，我司將安排宅配公司與您聯繫取貨事宜，再請您將退貨商品包裝妥當，於約定時間提供宅配人員取貨，宅配單據也請妥善保存。</li>
+                        <br>【貼心提醒您，請留意電話接聽，以免造成無法順利取件完成退貨。】</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <h3 class="bg-dark text-white text-center p-3 buy-tip">退貨條件</h3>
+                <div class="tip">
+                    <ul class="mt-4">
+                        <li class="m-2">猶豫期非試用期，您欲退回之商品必須是全新未拆封狀態，且為完整包裝的。</li>
+                        <li class="m-2">
+                            請注意保持商品本體、配件、內外包裝、贈品、保證書、原廠包裝及所有附隨文件或資料的完整性，切勿缺漏任何配件或損毀原廠外盒，並請以法雅客e-SHOP原外箱進行適當包裝，避免運送過程造成商品損害。若該商品配合行銷活動，有提供贈品等，也請一併附上，以利完成退貨程序。
+                        </li>
+                        <li class="m-2">為維護您的退貨權益，退回之商品必須為全新狀態、包裝完整無汙損、折損無缺件。若經退貨中心判定商品為人為損傷，則會收取相關整新費用，整新費用計算說明如下：</li>
+                        <li class="m-2">
+                            依據民法第259條第六項：『應返還之物有毀損、滅失或因其他事由，致不能返還者，應償還其價額。』若於七日猶豫期內(非試用鑑賞期)欲申請退貨，請恢復商品原始全新狀態（退換貨商品必須是全新商品，商品與盒裝外觀不得有刮傷、破損、受潮、塗寫文字，且必須保有相關配件（保護袋、配件包裝、保麗龍、贈品、所附文件⋯等）之完整性，若商品無問題且已拆封（含商品包裝封膜
+                            、商品外盒等），經退貨中心審核人員檢核後，如有損壞將依損壞情況或缺件商品價格向您收取該商品原價最高30%的折價損失費用。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row m-3">
+            <div class="col text-center">
+                Copyright © 2024 Oscar_photo. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // function plus() {
+        //     var quantityInput = document.getElementById('quantity');
+        //     var currentValue = parseInt(quantityInput.value);
+        //     quantityInput.value = currentValue + 1;
+        //     calculateSubtotal();
+        // }
+
+        // function reduce() {
+        //     var quantityInput = document.getElementById('quantity');
+        //     var currentValue = parseInt(quantityInput.value);
+        //     if (currentValue > 0) {
+        //         quantityInput.value = currentValue - 1;
+        //     }
+        //     calculateSubtotal();
+        // }
+
+        document.querySelectorAll('.reduce').forEach(function (button) {
+            button.addEventListener('click', function () {
+                var quantityInput = this.nextElementSibling;
+                var currentValue = parseInt(quantityInput.value);
+                if (currentValue > 0) {
+                    quantityInput.value = currentValue - 1;
+                }
+                calculateSubtotal(this);
+            });
+        });
+
+        document.querySelectorAll('.plus').forEach(function (button) {
+            button.addEventListener('click', function () {
+                var quantityInput = this.previousElementSibling;
+                var currentValue = parseInt(quantityInput.value);
+                quantityInput.value = currentValue + 1;
+                calculateSubtotal(this);
+            });
+        });
+
+
+        function calculateSubtotal() {
+            // console.log('rt');
+            const prices = document.querySelectorAll('.price');
+            const quantities = document.querySelectorAll('.quantity');
+            const stock = document.querySelectorAll('.stock');
+            let subtotal = 0;
+
+            prices.forEach((price, index) => {
+                const unitPrice = parseFloat(price.dataset.price);
+                const quantity = parseInt(quantities[index].value);
+                if (index == '0' && quantity > '3') {
+                    alert('您該品項購買的數量過多，請直接電洽聯繫客服人員。');
+                    location.reload();
+                    return;
+                }
+                if ((index == '1' && quantity > '10') || (index == '2' && quantity > '20')) {
+                    // alert('您該品項購買的數量過多，請直接電洽聯繫客服人員。');
+                    if (index == '1' && quantity > '10') {
+                        price.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.querySelector('.msg').innerText = '該品項一次下單最大數量為10，請重新下單。';
+                    } else if (index == '2' && quantity > '20') {
+                        price.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.querySelector('.msg').innerText = '該品項一次下單最大數量為20，請重新下單。';
+                    }
+                    setTimeout(() => {
+                        location.reload();
+                    }, "3000");
+                    // location.reload();
+                    return;
+                }
+                const itemTotal = unitPrice * quantity;
+                subtotal += itemTotal;
+                price.nextElementSibling.nextElementSibling.nextElementSibling.querySelector('.s_price').innerText = itemTotal.toLocaleString('en-US');
+            });
+
+            stock.forEach((stock, index) => {
+                const unitStock = parseFloat(stock.dataset.stock);
+                const quantity_q = parseInt(quantities[index].value);
+                if (quantity_q > unitStock) {
+                    alert('您該品項購買的數量大於庫存，請重新下單。');
+                    location.reload();
+                    return;
+                }
+            });
+
+            //subtotal.toLocaleString('en-US') 將數字 subtotal 格式化為美國英語（en-US）的表示形式。這通常包括添加逗號作為千位分隔符，以便數字更容易閱讀。
+            // EX：
+            // 1234567.89.toLocaleString('en-US') 會返回 1, 234, 567.89
+            // 1000.toLocaleString('en-US') 會返回 1,000
+
+            document.getElementById('subtotal').innerText = subtotal.toLocaleString('en-US');
+
+            // Check if subtotal exceeds 100,000
+            if (subtotal > 100000) {
+                const discount = subtotal * 0.3; // 30% discount
+                document.querySelector('.discount').style.display = 'block';
+                document.getElementById('dis-msg').style.display = 'block';
+
+                setTimeout(() => {
+                    document.getElementById('dis-msg').style.display = 'none';
+                }, "3000");
+
+                document.getElementById('discount').innerText = discount.toLocaleString('en-US');
+                document.querySelector('#calculate span').innerText = (subtotal - discount).toLocaleString('en-US');
+            } else {
+                document.querySelector('.discount').style.display = 'none';
+                document.querySelector('#calculate span').innerText = subtotal.toLocaleString('en-US');
+            }
+        }
+
+        document.getElementById('calculate').addEventListener('click', calculateSubtotal);
+
+        // document.getElementsByClassName('control-btn')[0].addEventListener('click', reduce);
+        // document.getElementsByClassName('control-btn')[1].addEventListener('click', plus);
+
+        // document.querySelector('.reduce').addEventListener('click', function() {
+        //     var quantityInput = document.getElementById('quantity');
+        //     var currentValue = parseInt(quantityInput.value);
+        //     if (currentValue > 0) {
+        //         quantityInput.value = currentValue - 1;
+        //     }
+        //     calculateSubtotal();
+        // });
+
+        // document.querySelector('.plus').addEventListener('click', function() {
+        //     var quantityInput = document.getElementById('quantity');
+        //     var currentValue = parseInt(quantityInput.value);
+        //     quantityInput.value = currentValue + 1;
+        //     calculateSubtotal();
+        // });
+
+        // document.getElementsByClassName('control-btn').addEventListener('click', function (e) {
+        //     console.log(e);
+        // });
+
+        const inputs = document.querySelectorAll('.quantity');
+        inputs.forEach(input => {
+            input.addEventListener('blur', calculateSubtotal);
+        });
+
+
+    </script>
+</body>
+
+</html>

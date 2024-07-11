@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+        }
+
+        .box>img {
+            width: 100%;
+        }
+
+        th,
+        td {
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        img {
+            transition: transform .2s;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .result {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h2>星巴克| Starbucks Taiwan</h2>
+        <p>我們提供高品質的咖啡與服務，搭配獨特的空間設計理念，提供你一個品嚐咖啡的第三個好去處。</p>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th width="10%">ID</th>
+                    <th width="20%">商品</th>
+                    <th width="10%">單價</th>
+                    <th width="20%">數量</th>
+                    <th class="text-center">小計</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <div class="box">
+                            <img src="./images/01.jpg" alt="" srcset="">
+                        </div>
+                    </td>
+                    <td>50</td>
+                    <td>
+                        <input id="item1Count" class="form-control ms-3" type="number" name="" id="" value="1"
+                            data-price="50" min="0" max="10">
+                    </td>
+                    <td>
+                        <span id="item1Total">
+                            50
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <div class="box">
+                            <img src="./images/02.jpg" alt="" srcset="">
+                        </div>
+                    </td>
+                    <td>100</td>
+                    <td>
+                        <input id="item2Count" class="form-control ms-3" type="number" name="" id="" value="1"
+                            data-price="100" min="0" max="10">
+                    </td>
+                    <td>
+                        <span id="item2Total">
+                            100
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <div class="box">
+                            <img src="./images/03.jpg" alt="" srcset="">
+                        </div>
+                    </td>
+                    <td>70</td>
+                    <td>
+                        <input id="item3Count" class="form-control ms-3" type="number" name="" id="" value="1"
+                            data-price="70" min="0" max="10">
+                    </td>
+                    <td>
+                        <span id="item3Total">
+                            70
+                        </span>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        <hr>
+        <div class="container">
+            <div class="d-grid gap-2">
+                <button class="btn btn-secondary" type="button">總&nbsp;&nbsp;&nbsp;&nbsp;計</button>
+            </div>
+        </div>
+        <hr>
+        <div class="result text-center">
+            點餐金額總計為 $ 999 元 , 超過 500 七折 優惠價 <span class="text-danger"> $ 700</span> 元
+        </div>
+    </div>
+
+    <script>
+
+
+        orders = [
+            {
+                'id': 1,
+                'name': '咖啡',
+                'pic': '01.jpg',
+                'price': 50,
+                'count': 1,
+            },
+            {
+                'id': 2,
+                'name': '草莓牛奶',
+                'pic': '02.jpg',
+                'price': 100,
+                'count': 1,
+            },
+            {
+                'id': 3,
+                'name': '抹茶',
+                'pic': '03.jpg',
+                'price': 70,
+                'count': 1,
+            },
+        ];
+
+        const item1Count = document.getElementById('item1Count');
+        const item1Total = document.getElementById('item1Total');
+        const item2Count = document.getElementById('item2Count');
+        const item2Total = document.getElementById('item2Total');
+        const item3Count = document.getElementById('item3Count');
+        const item3Total = document.getElementById('item3Total');
+
+
+        item1Count.addEventListener('change', function () {
+            console.log('change ok');
+            let getDataPrice = Number(this.getAttribute('data-price'));
+            let getNumber = Number(this.value);
+            console.log('getDataPrice', getDataPrice);
+            console.log('getDataPrice typeof', typeof (getDataPrice));
+            console.log('getNumber', getNumber);
+            console.log('getNumber typeof', typeof (getNumber));
+            let tmpTotal = getDataPrice * getNumber;
+            item1Total.innerText = tmpTotal;
+        });
+
+        item2Count.addEventListener('change', function () {
+            console.log('change ok');
+            let getDataPrice = Number(this.getAttribute('data-price'));
+            let getNumber = Number(this.value);
+            console.log('getDataPrice', getDataPrice);
+            console.log('getDataPrice typeof', typeof (getDataPrice));
+            console.log('getNumber', getNumber);
+            console.log('getNumber typeof', typeof (getNumber));
+            let tmpTotal = getDataPrice * getNumber;
+            item2Total.innerText = tmpTotal;
+        });
+
+        item3Count.addEventListener('change', function () {
+            console.log('change ok');
+            let getDataPrice = Number(this.getAttribute('data-price'));
+            let getNumber = Number(this.value);
+            console.log('getDataPrice', getDataPrice);
+            console.log('getDataPrice typeof', typeof (getDataPrice));
+            console.log('getNumber', getNumber);
+            console.log('getNumber typeof', typeof (getNumber));
+            let tmpTotal = getDataPrice * getNumber;
+            item3Total.innerText = tmpTotal;
+        });
+
+        console.log('orders', orders);
+    </script>
+</body>
+
+</html>
